@@ -4,7 +4,15 @@
   "description": "UCI Boot Camp Project 03 - One Man's Trash",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -19,7 +27,12 @@
   "homepage": "https://github.com/Maxx105/one_mans_trash#readme",
   "dependencies": {
     "axios": "^0.21.0",
+    "bootstrap": "^4.5.3",
     "express": "^4.17.1",
-    "mongoose": "^5.10.11"
+    "mongoose": "^5.10.11",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0"
   }
 }
