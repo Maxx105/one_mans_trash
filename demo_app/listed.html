@@ -1,0 +1,81 @@
+<!-- ItemCard:
+    1. title
+    2. details
+    3. photos
+    4. value
+    5. condition
+    6. zipcode -->
+
+
+<!-- ChatButtons: send a message to the seller
+    -is this available
+    -would you like to trade your item for _____?(link to item o your page)
+    -can i buy this for _____?(designated price) -->
+
+<!-- SellerCard:
+    -profile pic
+    -username
+    -location(zip)  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>listed item page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <style>
+        *{
+            text-align: center;
+        }
+        #sellerCard{
+            margin-left: 39%;
+        }
+        #listing{
+            margin-left: 38%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <img id="listing" src=https://s.wsj.net/public/resources/images/B3-DU184_TECHNO_M_20190423121538.jpg
+            style="width: 400px;" />
+        <div class="card-body">
+            <h5 class="card-title">item title</h5>
+            <p class="card-text">This is the item details. This is the item details. This is the item details. This is
+                the item details. This is the item details. This is the item details.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">item value $$$</li>
+            <li class="list-group-item">item condition</li>
+        </ul>
+        <br> <br> <hr>
+        <div class="card-body">
+            <h3>message seller</h3>
+            <button><a href="#" class="card-link">hi is this available?</a></button>
+            <button><a href="#" class="card-link">do you want to trade?</a></button>
+            <button> <a href="#" class="card-link">are you selling this?</a></button>
+        </div>
+    </div>
+    <br><br><br>
+    <div id="sellerCard">
+        <div class="card" style="width: 18rem;">
+            <img src="data:image/png;base64,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"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <h3>seller's username</h3>
+                <p>
+                <h4>sellers zipcode:</h4> 92688 </p>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

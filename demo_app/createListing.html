@@ -1,0 +1,60 @@
+<!-- CreateItemForm
+    1. title
+    2. details
+    3. photos
+    4. value
+    5. condition
+    6. zipcode -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create a listing</title>
+</head>
+<body>
+    <div id="itemCard">
+        <ol>
+            <li>
+                <h3>tittle</h3>
+                <input type="text" placeholder="tittle">
+            </li>
+
+            <li>
+                <h3>item details</h3>
+                <textarea name="details" id="" cols="30" rows="10">item details</textarea>
+            </li>
+
+            <li>
+                <h3>item photos</h3>
+                <input type="file" id="photoUpload" name="pics">
+            </li>
+
+            <li>
+                <h3>value</h3>
+                <input type="text" placeholder="value">
+            </li>
+
+            <li>
+                <h3>condition</h3>
+                <select name="condition" id="itemCondition">
+                    <option value="for parts">for parts</option>
+                    <option value="slight use">slight use</option>
+                    <option value="dead stock">dead stock</option>
+                  </select>
+            </li>
+
+            <li>
+                <h3>zipcode</h3>
+                <input type="text" placeholder="zipcode">
+            </li>
+
+        </ol>
+        <button>submit</button>
+    </div>
+
+
+</body>
+</html>
