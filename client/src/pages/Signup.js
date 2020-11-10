@@ -1,9 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
+import AuthAPI from "../utils/AuthAPI";
+import SignupForm from "../components/SignupForm";
 
-function Signup() {
+function Signup(props) {
+    const [user, setUser] = useState({
+        username: "", 
+        password: "",
+        first_name: "",
+        last_name: "",
+        email: ""
+    });
+    const [message, setMessage] = useState({});
+
+    function redirect() {
+        setTimeout(() => props.history.push('/login'), 3000);
+    }
+
+    function refresh() {
+        setTimeout(() => setMessage({}), 3000);
+    }
+
+    function handleInputChange(e) {
+        setUser({...user, [e.target.name]: e.target.value});
+    }
+
+    function handleFormSubmit(e) {
+        e.preventDefault();
+        AuthAPI.register(user).then(data=>{
+            const { error } = data;
+            setMessage(data);
+            refresh();
+            if(!error) {
+                redirect();
+            }
+        });
+    }
+
     return (
-        <div>
-            <h1>SIGNUP</h1>
+        <div className = "container">
+            <SignupForm
+                onChange = {handleInputChange}
+                onSubmit = {handleFormSubmit}
+                message = {message.message}
+                error = {message.error}
+            ></SignupForm>
         </div>
     );
 }

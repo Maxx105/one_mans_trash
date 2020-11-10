@@ -6,8 +6,11 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import UserProfile from './pages/UserProfile';
 import About from './pages/About';
+import CreateItem from './pages/CreateItem';
 import NoMatch from './pages/NoMatch';
 import Navbar from "./components/Navbar";
+import PrivateRoute from './hocs/PrivateRoute';
+import UnPrivateRoute from './hocs/UnPrivateRoute';
 
 function App() {
   return (
@@ -16,11 +19,12 @@ function App() {
       <Navbar/>
       <Switch>
         <Route exact path='/' component={Home}></Route>
-        <Route exact path='/item' component={Item}></Route>
-        <Route exact path='/login' component={Login}></Route>
-        <Route exact path='/signup' component={Signup}></Route>
+        <PrivateRoute exact path='/item' component={Item}></PrivateRoute>
+        <UnPrivateRoute path='/login' component={Login}></UnPrivateRoute>
+        <PrivateRoute path='/createitem' component={CreateItem}></PrivateRoute>
+        <UnPrivateRoute path='/signup' component={Signup}></UnPrivateRoute>
         <Route exact path='/about' component={About}></Route>
-        <Route exact path='/userProfile' component={UserProfile}></Route>
+        <PrivateRoute exact path='/userProfile' component={UserProfile}></PrivateRoute>
         <Route path='*' component={NoMatch}></Route>
       </Switch>
     </div>
