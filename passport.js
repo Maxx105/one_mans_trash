@@ -11,7 +11,7 @@ const cookieExtractor = function(req) {
     return token;
 }
 
-let opts = {
+const opts = {
     jwtFromRequest: cookieExtractor,
     secretOrKey: "wpxstaqmylttzertaowundbpvzispjbvvceqngqkcphosjevaonmhedpjtiwcynp"
 }

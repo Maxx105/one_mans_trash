@@ -1,8 +1,17 @@
 import axios from "axios"; 
 
 const ItemAPI = {
-    getItems: function() {
-        return axios.get("/user/items")
+    getUserItems: function() {
+        return axios.get("/api/userItems")
+        .then(res => res.data)
+        .catch(err => {
+            if (err.response.status === 401) {
+                return {message: "Not Signed In", error: true};
+            }
+        });   
+    },
+    getAllItems: function() {
+        return axios.get("/api/allItems")
         .then(res => res.data)
         .catch(err => {
             if (err.response.status === 401) {
@@ -11,7 +20,7 @@ const ItemAPI = {
         });   
     },
     postItem: function(item) {
-        return axios.post("/user/item", item)
+        return axios.post("/api/allItems", item)
         .then(res => res.data)
         .catch(err => {
             if (err.response.status === 401) {

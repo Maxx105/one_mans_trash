@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import "./style.css";
 
 function SignupForm(props) {
     const [alertColor, setAlertColor] = useState('');
@@ -12,7 +13,7 @@ function SignupForm(props) {
     }, [props.message, props.error])
 
     return (
-        <div>
+        <div className = "signup">
             <form onSubmit={props.onSubmit} >
                 <div className="form-group">
                     <label>First Name</label>

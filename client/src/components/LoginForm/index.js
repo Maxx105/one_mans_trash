@@ -1,9 +1,10 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import "./style.css";
 
 function LoginForm(props) {
     return (
-        <div>
+        <div className = "login">
             <form onSubmit={props.onSubmit}>
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Username</label>
