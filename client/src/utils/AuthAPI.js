@@ -2,7 +2,7 @@ import axios from "axios";
 
 const AuthAPI = {
     login: function(user) {
-        return axios.post("user/login", user)
+        return axios.post("/api/login", user)
         .then(res => res.data)
         .catch(err => {
             if (err.response.status >= 400) {
@@ -11,15 +11,15 @@ const AuthAPI = {
         });
     },
     register: function(user) {
-        return axios.post("/user/register", user)
+        return axios.post("/api/register", user)
         .then(res => res.data)
     },
     logout: function() {
-        return axios.get("/user/logout")
+        return axios.get("/api/logout")
         .then(res => res.data)
     },
     isAuthenticated: function() {
-        return axios.get("/user/authenticated")
+        return axios.get("/api/authenticated")
         .then(res => res.data)
         .catch(err => {
             if (err.response.status >= 400) {

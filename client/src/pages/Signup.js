@@ -12,14 +12,6 @@ function Signup(props) {
     });
     const [message, setMessage] = useState({});
 
-    function redirect() {
-        setTimeout(() => props.history.push('/login'), 3000);
-    }
-
-    function refresh() {
-        setTimeout(() => setMessage({}), 3000);
-    }
-
     function handleInputChange(e) {
         setUser({...user, [e.target.name]: e.target.value});
     }
@@ -29,9 +21,9 @@ function Signup(props) {
         AuthAPI.register(user).then(data=>{
             const { error } = data;
             setMessage(data);
-            refresh();
+            setTimeout(() => setMessage({}), 3000);
             if(!error) {
-                redirect();
+                setTimeout(() => props.history.push('/login'), 3000);
             }
         });
     }

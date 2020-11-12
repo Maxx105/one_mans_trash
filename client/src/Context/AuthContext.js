@@ -18,7 +18,7 @@ export default ({ children }) => {
 
     return (
         <div>
-            {!isLoaded ? <h1 style={{textAlign: "center", margin: "20px"}}>Loading</h1> : 
+            {!isLoaded ? <div style={{height: '100vh', backgroundImage: "url(" + process.env.PUBLIC_URL + '/loadingBG.png' + ")"}}></div> : 
             <AuthContext.Provider value={{user, setUser, isAuthenticated, setIsAuthenticated}}>
                 { children }
             </AuthContext.Provider>}

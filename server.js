@@ -21,8 +21,10 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/treasureDB" ,{u
   console.log('successfully connected to database');
 });
 
-const userRouter=require('./routes/User');
-app.use('/user', userRouter);
+const router=require('./routes/api/user');
+app.use('/api', router);
+// const allRouter=require('./routes/api/all');
+// app.use('/all', allRouter);
 
 // Start the API server
 app.listen(PORT, function() {
