@@ -13,7 +13,7 @@ function CreateItemForm(props) {
                 <input className="form-control" type="text" placeholder="Default input" name="value" onChange={props.onChange}/>
                 <h3>Condition:</h3>
                 <select className="form-control" name="condition" id="itemCondition" onChange={props.onChange}>
-                    <option value="" disabled selected>Select your option</option>
+                    <option value="">Select your option</option>
                     <option value="For Parts">For Parts</option>
                     <option value="Slight Use">Slight Use</option>
                     <option value="Dead Stock">Dead Stock</option>
