@@ -4,6 +4,7 @@ const passport = require('passport');
 const passportConfig = require('../../passport');
 const JWT = require('jsonwebtoken');
 const usersController = require("../../controllers/usersController");
+const itemsController = require("../../controllers/itemsController");
 const User = require('../../models/User');
 const Item = require('../../models/Item');
 
@@ -16,43 +17,13 @@ function signToken(userID) {
     return JWT.sign(payload, secretOrKey);  
 }
 
-// router.post('/register', (req,res) =>{
-//     const { username } = req.body;
-//     User.findOne({username}, function(err, user) {
-//         if (err) {
-//             res.json({message: "Error has occurred", error: true});
-//         }
-//         if (user) {
-//             res.json({message: "Username is already taken", error: true});
-//         }
-//         else {
-//             const newUser = new User(req.body);
-//             newUser.save(err => {
-//                 if(err)
-//                     res.json({message: "Error has occurred", error: true});
-//                 else   
-//                     res.json({message: "Account successfully created", error: false});
-//             });
-//         }
-//     });
-// });
-
 router.route('/register')
     .get(usersController.findAll)
     .post(usersController.findOneThenSave)
 
-// router.route('/register')
-//     .get(usersController.findAll)
-//     .post(usersController.findOneThenSave)
-    
-    
-
-// for testing and seeing all users in database
-// router.get('/register', function(req,res) {
-//     User.find(req.query)
-//     .then(dbModel => res.json(dbModel))
-//     .catch(err => res.status(422).json(err))
-// });
+router.route("/allItems/:id")
+    .get(itemsController.findById)
+    .delete(itemsController.remove);
 
 router.post('/login', passport.authenticate('local',{session:false}), (req,res) =>{
     if(req.isAuthenticated()) {

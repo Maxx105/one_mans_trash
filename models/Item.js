@@ -24,7 +24,11 @@ const ItemSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    user: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
+    // user: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
+    user: {
+        type: String,
+        required: true
+    }
 });
 
 module.exports = mongoose.model('Item', ItemSchema);

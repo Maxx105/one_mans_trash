@@ -19,7 +19,7 @@ function App() {
       <Navbar/>
       <Switch>
         <Route exact path='/' component={Home}></Route>
-        <PrivateRoute exact path='/item' component={Item}></PrivateRoute>
+        <PrivateRoute path='/item/:id' component={Item}></PrivateRoute>
         <UnPrivateRoute path='/login' component={Login}></UnPrivateRoute>
         <PrivateRoute path='/createitem' component={CreateItem}></PrivateRoute>
         <UnPrivateRoute path='/signup' component={Signup}></UnPrivateRoute>

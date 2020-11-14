@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import AuthAPI from "../../utils/AuthAPI";
 import { AuthContext } from "../../Context/AuthContext";
 
-const Navbar = props => {
+function Navbar() {
     const {isAuthenticated, user, setIsAuthenticated, setUser} = useContext(AuthContext);
 
     function onClickLogoutHandler() {
@@ -50,10 +50,6 @@ const Navbar = props => {
                         Create Item
                     </li>
                 </Link>
-                <form className="form-inline">
-                    <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-                    <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
                 <Link to="/about">
                     <li className="nav-item nav-link">
                         About

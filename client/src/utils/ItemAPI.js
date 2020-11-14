@@ -19,6 +19,12 @@ const ItemAPI = {
             }
         });   
     },
+    getItem: function(id) {
+        return axios.get("/api/allItems/" + id);
+    },
+    deleteItem: function(id) {
+        return axios.delete("/api/allItems/" + id) 
+    },
     postItem: function(item) {
         return axios.post("/api/allItems", item)
         .then(res => res.data)

@@ -1,0 +1,16 @@
+#home-item-card-link {
+    color: black; 
+    text-decoration: none;
+}
+
+.card-img-top {
+    padding: 10px;
+}
+
+.card:hover {
+    background-color: lightgrey;
+}
+
+.card:active {
+    background-color: grey;
+}
