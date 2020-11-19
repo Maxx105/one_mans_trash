@@ -35,6 +35,10 @@ function SignupForm(props) {
                     <label htmlFor="exampleInputPassword1">Password</label>
                     <input type="password" className="form-control" id="exampleInputPassword1" name="password" onChange={props.onChange}/>
                 </div>
+                <div className="form-group">
+                    <label htmlFor="file">Profile Picture:</label>
+                    <input type="file" className="form-control-file" name="avatar" id="file" onChange={props.imageChange}/>
+                </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
             </form>
             <br/>

@@ -28,9 +28,14 @@ function Signup(props) {
         });
     }
 
+    function handleImageChange(e) {
+
+    }
+
     return (
         <div className = "container">
             <SignupForm
+                imageChange = {handleImageChange}
                 onChange = {handleInputChange}
                 onSubmit = {handleFormSubmit}
                 message = {message.message}
