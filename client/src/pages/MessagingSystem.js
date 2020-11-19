@@ -1,9 +1,10 @@
 import React from "react";
-import Login from "./Login.js"
-import useLocalStorage from '../hooks/useLocalStorage'
-import Dashboard from "./Dashboard.js";
-import { ContactsProvider } from "../contexts/ContactsProvider.js";
-import { ConversationsProvider } from "../contexts/ConversationsProvider.js";
+import Login from "../components/Chat/Login"
+import useLocalStorage from "../components/Hooks/useLocalStorage"
+import Dashboard from "../components/Chat/Dashboard";
+import { ContactsProvider } from "../Context/ContactsProvider";
+import { ConversationsProvider } from "../Context/ConversationsProvider";
+
 
 
 function MessagingSystem() {
@@ -11,12 +12,14 @@ function MessagingSystem() {
 const [ id, setId] = useLocalStorage('id')
 // this uses the contexts to grab contacts you'll probably want to take this out...
 const dashboard = (
-    <ContactsProvider>
+
+      <ContactsProvider>
         <ConversationsProvider id={id}>
-        <Dashboard id={id} />
+          <Dashboard id={id} />
         </ConversationsProvider>
-    </ContactsProvider>
-)
+      </ContactsProvider>
+    
+  )
 
     return(
         id ? dashboard : <Login onIdSubmit = {setId}/> 

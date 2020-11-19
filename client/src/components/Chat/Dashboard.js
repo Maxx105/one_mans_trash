@@ -1,6 +1,6 @@
 import React from 'react'
 import OpenConversation from './OpenConversation'
-import {useConversations} from '../contexts/ConversationsProvider'
+import { useConversations } from '../../Context/ConversationsProvider';
 import Sidebar from "./Sidebar"
 
 export default function Dashboard({ id }) {
