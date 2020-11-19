@@ -12,7 +12,8 @@ function CreateItem(props) {
         value: 0,
         condition: "",
         zipcode: 0,
-        user: ""
+        user: "",
+        userID: ""
     });
     // const [title, setTitle] = useState("");
     // const [details, setDetails] = useState("");
@@ -27,14 +28,16 @@ function CreateItem(props) {
         if (e.target.name === 'value' || e.target.name === 'zipcode') {
             setItem({
                 ...item, 
-                ...{user: authContext.user.username}, 
+                ...{user: authContext.user.username},
+                ...{userID: authContext.id._id}, 
                 [e.target.name]: parseInt(e.target.value),
                 ...{photo: photo.name}
             });
         } else {
             setItem({
                 ...item, 
-                ...{user: authContext.user.username}, 
+                ...{user: authContext.user.username},
+                ...{userID: authContext.id._id},
                 [e.target.name]: e.target.value,
                 ...{photo: photo.name}
             });
@@ -44,7 +47,7 @@ function CreateItem(props) {
         event.preventDefault();
         ItemAPI.postItem(item).then((data)=>{
             const { isAuthenticated, user, message } = data;
-            setTimeout(() => props.history.push('/userProfile'), 3000);
+            setTimeout(() => props.history.push('/userprofile/' + authContext.id._id), 3000);
             if(isAuthenticated) {
                 authContext.setUser(user);
                 authContext.setIsAuthenticated(isAuthenticated);
@@ -58,7 +61,7 @@ function CreateItem(props) {
             }
         };
         ItemAPI.uploadPhoto(data, config).then(data => {
-            alert("file is successfully uploaded")
+            
         }).catch(err => console.log(err.response))
     }
 

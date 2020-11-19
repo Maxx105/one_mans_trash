@@ -6,27 +6,24 @@ import UserAPI from "../../utils/UserAPI";
 import { AuthContext } from "../../Context/AuthContext";
 
 function Navbar() {
-    const {isAuthenticated, user, setIsAuthenticated, setUser} = useContext(AuthContext);
+    const {isAuthenticated, user, setIsAuthenticated, setUser, id, setId} = useContext(AuthContext);
     const [userId, setUserId] = useState('');
-    // const {id} = useParams();
-    // const id = "5fb5f792257395ba68ecaf96"
-    // const {userId} = useParams();
 
     function onClickLogoutHandler() {
         AuthAPI.logout().then(data=>{
             if(data.success) {
+                setId('')
                 setUser(data.user)
                 setIsAuthenticated(false);
             }
         })
     }
 
-    useEffect(() => {
-        // console.log(id)
-        UserAPI.getUser("5fb5f792257395ba68ecaf96")
-            .then(res => console.log(res.data))
-            .catch(err => console.log(err.response));
-    }, [])
+    // useEffect(() => {
+    //     UserAPI.getUser(id._id)
+    //         .then(res => console.log(res.data))
+    //         .catch(err => console.log(err.response));
+    // }, [])
     
 
     function preLoginNavbar() {
@@ -74,7 +71,7 @@ function Navbar() {
                         Messages
                     </li>
                 </Link>
-                <Link to={"/userprofile/" + "5fb5f792257395ba68ecaf96"}>
+                <Link to={"/userprofile/" + id._id}>
                     <li className="nav-item nav-link">
                         Profile
                     </li>

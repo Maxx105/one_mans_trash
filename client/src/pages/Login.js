@@ -15,8 +15,9 @@ function Login(props) {
     function handleFormSubmit(e) {
         e.preventDefault();
         AuthAPI.login(user).then((data)=>{
-            const { isAuthenticated, user, message } = data;
+            const { isAuthenticated, user, message, id } = data;
             if(isAuthenticated) {
+                authContext.setId(id);
                 authContext.setUser(user);
                 authContext.setIsAuthenticated(isAuthenticated);
                 // changes page to home page

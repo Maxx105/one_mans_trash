@@ -28,6 +28,9 @@ const ItemSchema = new mongoose.Schema({
     user: {
         type: String,
         required: true
+    },
+    userID: {
+        type: String
     }
 });
 

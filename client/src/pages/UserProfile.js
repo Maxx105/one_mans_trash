@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useContext, useParams } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { useParams } from "react-router-dom"
 import ItemCard from "../components/ItemCard";
 import ItemAPI from "../utils/ItemAPI";
 import UserAPI from "../utils/UserAPI";
@@ -8,8 +9,10 @@ import { AuthContext } from '../Context/AuthContext';
 function UserProfile() {
     const [items, setItems] = useState([]);
     const authContext = useContext(AuthContext);
+    const [photo, setPhoto] = useState('');
+    const [alt, setAlt] = useState('');
 
-    // const {id} = useParams()
+    const {id} = useParams()
 
     // useEffect(() => {
     //     UserAPI.getUser(id)
@@ -18,10 +21,13 @@ function UserProfile() {
     // }, [])
     
     useEffect(() => {
-        // console.log(id)
-        // UserAPI.getUser(id)
-        //     .then(res => console.log(res.data))
-        //     .catch(err => console.log(err.response));
+        // authContext.setId()
+        UserAPI.getUser(id)
+            .then(res => {
+                setPhoto(res.data.photo)
+                setAlt(`${res.data.first_name} ${res.data.last_name}`)
+            })
+            .catch(err => console.log(err.response));
         loadItems()
     }, []);
 
@@ -34,6 +40,8 @@ function UserProfile() {
     return (
         <div>
             <UserInfo
+                alt = {alt}
+                photo = {photo}
                 currentUser = {authContext.user.username}
             ></UserInfo>
             <ItemCard
