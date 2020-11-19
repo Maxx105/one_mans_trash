@@ -13,11 +13,13 @@ function Home() {
         .catch(err => console.log(err.response));
     }, [])
 
+    const URL = "/uploads/";
+
     return (
         <div>
             <h1>{item.title}</h1>
             {item.photo ?
-                <img src={item.photo} alt={item.title} className="img-fluid img-thumbnail" style={{height:'25%', width: '25%'}}/> :
+                <img src={URL + item.photo} alt={item.title} className="img-fluid img-thumbnail" style={{height:'25%', width: '25%'}}/> :
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png" alt={item.title} className="img-fluid img-thumbnail" style={{height:'25%', width: '25%'}}/>
             }
             <p>{`details: ${item.details}`}</p>

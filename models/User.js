@@ -22,6 +22,9 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    photo: {
+        type: String
+    },
     items: [{type: mongoose.Schema.Types.ObjectId, ref: 'Item'}] //so user has own todos
 });
 

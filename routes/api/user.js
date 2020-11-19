@@ -5,6 +5,8 @@ const passportConfig = require('../../passport');
 const JWT = require('jsonwebtoken');
 const usersController = require("../../controllers/usersController");
 const itemsController = require("../../controllers/itemsController");
+const path = require("path");
+const multer = require("multer");
 const User = require('../../models/User');
 const Item = require('../../models/Item');
 
@@ -82,5 +84,25 @@ router.get('/authenticated', passport.authenticate('jwt',{session:false}), (req,
     const {username} = req.user;
     res.json({isAuthenticated: true, user: {username}});
 });
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, './client/public/uploads')
+    },
+    filename: function (req, file, cb) {
+      cb(null, file.originalname) 
+    }
+  })
+  
+const upload = multer({ storage: storage });
+
+router.post('/upload', upload.single('photo'), function (req, res, next) {
+    res.json({
+        originalName: req.file.originalname,
+        destination: req.file.destination,
+        filename: req.file.filename,
+        path: req.file.path
+    })
+  });
 
 module.exports = router;

@@ -12,13 +12,36 @@ function Home() {
     const [visibility, setVisibility] = useState('hidden');
     const [filterString, setFilterString] = useState('');
     const [filterParam, setFilterParam] = useState('');
+    const [sortString, setSortString] = useState('');
 
     useEffect(() => {
         ItemAPI.getAllItems().then(data=>{
             setItems(data)
-            setAllItems(data)
+            setAllItems(data.slice(0))
         });
     }, []);
+
+    useEffect(() => {
+        if (sortString === "Price (Low to High)") {
+            setItems(
+                items.sort(function(a, b) {
+                    if (a.value < b.value) { return -1; }
+                    if (a.value > b.value) { return 1; }
+                    return 0;
+                })
+            )
+        } else if (sortString === "Price (High to Low)") {
+            setItems(
+                items.sort(function(a, b) {
+                    if (a.value > b.value) { return -1; }
+                    if (a.value < b.value) { return 1; }
+                    return 0;
+                })
+            )
+        } else if (sortString === "none") {
+            setItems(allItems)
+        } 
+    }, [sortString]);
 
     function handleFilterChange(event) {
         setFilterParam(event.target.value);
@@ -48,7 +71,6 @@ function Home() {
         });
         if (filterParam === "Name of Item") {
             setItems(filteredByItem);
-            setFilterString('');
         } else if (filterParam === "Username") {
             setItems(filteredByUsername);
         }
@@ -56,8 +78,8 @@ function Home() {
     }
 
     function handleSortChange(event) {
-        event.preventDefault();
         if (event.target.value === "Price (Low to High)") {
+            setSortString(event.target.value)
             setItems(
                 items.sort(function(a, b) {
                     if (a.value < b.value) { return -1; }
@@ -66,6 +88,7 @@ function Home() {
                 })
             )
         } else if (event.target.value === "Price (High to Low)") {
+            setSortString(event.target.value)
             setItems(
                 items.sort(function(a, b) {
                     if (a.value > b.value) { return -1; }
@@ -73,8 +96,8 @@ function Home() {
                     return 0;
                 })
             )
-        } else {
-            return
+        } else if (event.target.value === "none") {
+            setItems(allItems)
         }
     }
 

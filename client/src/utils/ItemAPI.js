@@ -33,6 +33,11 @@ const ItemAPI = {
                 return {message: "Not Signed In", error: true};
             }
         });
+    }, 
+    uploadPhoto: function(data, config) {
+        return axios.post("/api/upload", data, config)
+        .then(res => res.data)
+        .catch(err => console.log(err.response))
     }
 }
 
