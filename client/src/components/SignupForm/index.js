@@ -14,7 +14,7 @@ function SignupForm(props) {
 
     return (
         <div className = "signup" onChange={props.onChange}>
-            
+            <form>
                 <div className="form-group">
                     <label>First Name</label>
                     <input type="text" className="form-control" id="first-name" name="first_name" />
@@ -40,7 +40,7 @@ function SignupForm(props) {
                     <input type="file" className="form-control-file" name="photo" id="photo" onChange={props.imageChange}/>
                 </div>
                 <button className="btn btn-primary" onClick={props.onSubmit}>Submit</button>
-            
+            </form>
             <br/>
             {props.message  ? 
                 <div className={`alert alert-${alertColor}`} role="alert">

@@ -35,7 +35,7 @@ router.post('/login', passport.authenticate('local',{session:false}), (req,res) 
         const {_id,username} = req.user;
         const token = signToken(_id);
         res.cookie('access_token', token, {httpOnly: true, sameSite: true});
-        res.json({isAuthenticated: true, user: {username}});
+        res.json({isAuthenticated: true, user: {username}, id: {_id}});
     }
 });
 
@@ -84,8 +84,9 @@ router.get('/userItems', passport.authenticate('jwt',{session:false}), function(
 });
 
 router.get('/authenticated', passport.authenticate('jwt',{session:false}), (req,res) =>{
+    const {_id} = req.user
     const {username} = req.user;
-    res.json({isAuthenticated: true, user: {username}});
+    res.json({isAuthenticated: true, user: {username}, id: {_id}});
 });
 
 const storage = multer.diskStorage({

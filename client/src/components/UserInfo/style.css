@@ -1,3 +1,9 @@
 #username-id {
     margin: 20px;
 }
+
+#profile-photo {
+    width: 10%;
+    /* float: left; */
+    margin-right: 10px
+} 
