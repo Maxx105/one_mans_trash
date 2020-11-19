@@ -23,6 +23,9 @@ router.route('/register')
     .get(usersController.findAll)
     .post(usersController.findOneThenSave)
 
+router.route("/user/:id")
+    .get(usersController.findById)
+
 router.route("/allItems/:id")
     .get(itemsController.findById)
     .delete(itemsController.remove);

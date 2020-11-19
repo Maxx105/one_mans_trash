@@ -2,7 +2,7 @@ import React from "react";
 function CreateItemForm(props) {
     return (
         <div>
-            <form onSubmit = {props.onClick}>
+            
                 <h3>Title:</h3>
                 <input className="form-control" type="text" placeholder="Default input" name="title" onChange={props.onChange}/>
                 <h3>Details:</h3>
@@ -24,8 +24,8 @@ function CreateItemForm(props) {
                 </select>
                 <h3>Zipcode:</h3>
                 <input className="form-control" type="text" placeholder="Default input" name="zipcode" onChange={props.onChange}/>
-                <button type="submit" className="btn btn-primary">Submit</button>
-            </form>
+                <button onClick = {props.onClick} className="btn btn-primary">Submit</button>
+            
         </div>
     );
 }

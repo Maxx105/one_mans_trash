@@ -1,10 +1,16 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import AuthAPI from "../../utils/AuthAPI";
+import UserAPI from "../../utils/UserAPI";
 import { AuthContext } from "../../Context/AuthContext";
 
 function Navbar() {
     const {isAuthenticated, user, setIsAuthenticated, setUser} = useContext(AuthContext);
+    const [userId, setUserId] = useState('');
+    // const {id} = useParams();
+    // const id = "5fb5f792257395ba68ecaf96"
+    // const {userId} = useParams();
 
     function onClickLogoutHandler() {
         AuthAPI.logout().then(data=>{
@@ -14,6 +20,14 @@ function Navbar() {
             }
         })
     }
+
+    useEffect(() => {
+        // console.log(id)
+        UserAPI.getUser("5fb5f792257395ba68ecaf96")
+            .then(res => console.log(res.data))
+            .catch(err => console.log(err.response));
+    }, [])
+    
 
     function preLoginNavbar() {
         return (
@@ -60,7 +74,7 @@ function Navbar() {
                         Messages
                     </li>
                 </Link>
-                <Link to="/userprofile">
+                <Link to={"/userprofile/" + "5fb5f792257395ba68ecaf96"}>
                     <li className="nav-item nav-link">
                         Profile
                     </li>

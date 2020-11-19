@@ -13,34 +13,34 @@ function SignupForm(props) {
     }, [props.message, props.error])
 
     return (
-        <div className = "signup">
-            <form onSubmit={props.onSubmit} >
+        <div className = "signup" onChange={props.onChange}>
+            
                 <div className="form-group">
                     <label>First Name</label>
-                    <input type="text" className="form-control" id="first-name" name="first_name" onChange={props.onChange}/>
+                    <input type="text" className="form-control" id="first-name" name="first_name" />
                 </div>
                 <div className="form-group">
                     <label>Last Name</label>
-                    <input type="text" className="form-control" id="last-name" name="last_name" onChange={props.onChange}/>
+                    <input type="text" className="form-control" id="last-name" name="last_name" />
                 </div>
                 <div className="form-group">
                     <label>Username</label>
-                    <input type="text" className="form-control" id="user-name" name="username" onChange={props.onChange}/>
+                    <input type="text" className="form-control" id="user-name" name="username" />
                 </div>
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Email address</label>
-                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" onChange={props.onChange}/>
+                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" />
                 </div>
                 <div className="form-group">
                     <label htmlFor="exampleInputPassword1">Password</label>
-                    <input type="password" className="form-control" id="exampleInputPassword1" name="password" onChange={props.onChange}/>
+                    <input type="password" className="form-control" id="exampleInputPassword1" name="password" />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="file">Profile Picture:</label>
-                    <input type="file" className="form-control-file" name="avatar" id="file" onChange={props.imageChange}/>
+                    <label htmlFor="file">Profile Picture</label>
+                    <input type="file" className="form-control-file" name="photo" id="photo" onChange={props.imageChange}/>
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
-            </form>
+                <button className="btn btn-primary" onClick={props.onSubmit}>Submit</button>
+            
             <br/>
             {props.message  ? 
                 <div className={`alert alert-${alertColor}`} role="alert">
