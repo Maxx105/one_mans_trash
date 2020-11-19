@@ -17,9 +17,7 @@ module.exports = {
   remove: function(req, res) {
     Item
       .findById({ _id: req.params.id })
-      .then(dbModel => {
-        console.log(req.params)
-        dbModel.remove()})
+      .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   }
