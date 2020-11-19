@@ -26,7 +26,7 @@ function App() {
         <UnPrivateRoute path='/signup' component={Signup}></UnPrivateRoute>
         <Route exact path='/about' component={About}></Route>
         <PrivateRoute exact path='/messages' component={MessagingSystem}></PrivateRoute>
-        <PrivateRoute exact path='/userProfile' component={UserProfile}></PrivateRoute>
+        <PrivateRoute path='/userprofile/:id' component={UserProfile}></PrivateRoute>
         <Route path='*' component={NoMatch}></Route>
       </Switch>
     </div>

@@ -17,7 +17,6 @@ function CreateItem(props) {
     // const [title, setTitle] = useState("");
     // const [details, setDetails] = useState("");
     const [photo, setPhoto] = useState("");
-    const [photoPath, setPhotoPath] = useState("");
     // const [value, setValue] = useState(0);
     // const [condition, setCondition] = useState("");
     // const [zipcode, setZipcode] = useState(0);

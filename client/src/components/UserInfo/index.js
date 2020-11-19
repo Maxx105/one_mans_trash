@@ -2,9 +2,11 @@ import React from "react";
 import "./style.css";
 
 function UserInfo(props) {
-    console.log(props)
+    const URL = "/uploads/";
     return (
-        <h1 id="username-id">Hello, <strong>{props.currentUser}</strong>!</h1>
+        <div>
+            <h1 id="username-id">Hello, <strong>{props.currentUser}</strong>!</h1>
+        </div>
     )
 }
 
