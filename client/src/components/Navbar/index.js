@@ -39,7 +39,7 @@ function Navbar() {
 
     function postLoginNavBar() {
         return (
-            <>
+            <>  
                 <Link to="/">
                     <li className="nav-item nav-link">
                         Home
@@ -53,6 +53,11 @@ function Navbar() {
                 <Link to="/about">
                     <li className="nav-item nav-link">
                         About
+                    </li>
+                </Link>
+                <Link to="/messages">
+                    <li className="nav-item nav-link">
+                        Messages
                     </li>
                 </Link>
                 <Link to="/userprofile">
