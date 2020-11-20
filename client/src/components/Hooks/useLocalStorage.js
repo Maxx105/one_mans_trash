@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 
+
 const PREFIX = "onemansTrash"
 
 export default function useLocalStorage(key,initialValue) {
@@ -20,3 +21,4 @@ export default function useLocalStorage(key,initialValue) {
    
     return [value,setValue]
 }
+
