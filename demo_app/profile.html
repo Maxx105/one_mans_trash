@@ -20,31 +20,35 @@ UserGallery
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
     <style>
-        img {
-            width: 300px;
-            height: auto;
-            margin: 40px;
-            padding: 10px;
-        }
-
-        #donald {
-            width: auto;
-            height: auto;
-            margin: 0px;
-            padding: 0px;
+        #user {
+            border-radius: 25px;
+            border: solid black 10px;
+            background-color: beige;
         }
 
         * {
             text-align: center;
         }
 
-        button {
-            margin-left: 90%;
+        body {
+            background-image: url('https://i2.wp.com/files.123freevectors.com/wp-content/original/171930-abstract-blue-orange-and-purple-fluid-gradient-geometric-background.jpg?w=800&q=95');
+            background-size: cover;
         }
 
-        #trump {
-            position: fixed;
-            left: 0;
+        #userLabel {
+            border: solid black 10px;
+            width: fit-content;
+            background-color: beige;
+            border-radius: 25px;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        #profilePic {
+            border-radius: 100px;
+            border: orange 10px solid;
+            padding: 10px;
+            width: 30%;
         }
     </style>
 </head>
@@ -53,11 +57,15 @@ UserGallery
     <div class="container">
         <div class="row">
 
-            <div class="col-2">
+            <div class="col-12">
 
-                <div id="trump" class="card" style="width: 18rem;">
-                    <img id="donald" class="card-img-top" alt="...">
-                    <div class="card-body">
+                <div id="user" class="card">
+                    <div class="col">
+                        <img src="https://static.toiimg.com/photo/msid-75805310/75805310.jpg?135092" id="profilePic"
+                            class="card-img-top" alt="profile pic">
+                    </div>
+                    <div class="card-body col">
+
                         <h5 class="card-title">username donald trump</h5>
                         <p>location: 92618</p>
                         <p class="card-text">SELLER DETAILS Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -65,15 +73,21 @@ UserGallery
                             expedita obcaecati a, nobis earum, nostrum atque voluptatem ipsam facilis voluptates ea,
                             deserunt at?
                             Doloremque facilis perferendis explicabo sint, eaque quas!</p>
-                        <a href="#" class="btn btn-primary">edit profile info</a>
                     </div>
                 </div>
-                
+
             </div>
+        </div>
+        <div class="row">
 
             <div class="col">
-                <h1>donald's listings</h1>
-                <button>edit listings</button>
+                <div class="row">
+                    <div class="col" id="userLabel">
+                        <h1>donald's listings</h1>
+                        <button type="button" class="btn btn-info">Edit listings</button>
+                    </div>
+                </div>
+
                 <div class="container mr-5" id="itemGallery">
 
                     <div class="row">

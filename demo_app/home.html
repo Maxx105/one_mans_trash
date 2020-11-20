@@ -13,17 +13,47 @@
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
   <style>
+    body{
+      background-image: url('https://img.freepik.com/free-vector/gradient-geometric-shape-background_78532-312.jpg?size=626&ext=jpg');
+      background-size: cover;
+    }
+    #searchBar{
+      margin-top:10px;
+      background-color: orange;
+      width: fit-content;
+      border-radius: 25px;
+      border: rgb(255, 208, 0) solid 10px;
+      padding: 10px;
+      margin-left: 40%;
+    }
+
+    input{
+      color: beige;
+    }
 
   </style>
 
 </head>
 
 <body>
-  <div id="searchbar" style="text-align: center; padding-top: 10px;">
+  <!-- <div id="searchbar" style="text-align: center; padding-top: 10px;">
     <input type="text" placeholder="search">
     <button>GO</button>
+  </div> -->
+  
+  <div class="header">
+    <h2></h2>
   </div>
+  <div id="searchBar">
+      <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+  </div>
+  
+
   <br><br><br>
+ 
 
 
   <div class="container" id="itemGallery">

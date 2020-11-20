@@ -11,157 +11,96 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>create a listing</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <style>
-        /* img {
-            float: right;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>create a listing</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    button {
+      margin-bottom: 10px;
+      margin-left: 50%;
+    }
 
-        body {
-            background-image: url('https://64.media.tumblr.com/384ff5e29c3cb984d0482e6c65ac1fdd/tumblr_mij6jb8hj11qjbsm8o1_500.gifv');
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center;
-            height: 50px;
-            background-image: linear-gradient(to bottom right, white,green);
-        } 
+    h1 {
+      padding-top: 20px;
+      text-align: center;
+    }
 
-        input, textarea, button, select{
-            background-color: greenyellow;
-            border: red solid 2px; 
-        } */
-    </style>
+    body {
+      background-image: url('https://images.vexels.com/media/users/3/168638/preview2/779ce0383d1c49840083db43bb6b859f-gradient-geometric-shapes-background.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    #itemCard {
+      border-radius: 25px;
+      margin-left: 20%;
+      margin-right: 30%;
+      margin-top: 30px;
+      background-color: beige;
+      border: solid 10px brown ;
+    }
+  </style>
+
 </head>
 
 <body>
 
 
-    <div id="itemCard">
+  <div id="itemCard" class="container">
+    <div class="row">
+      <div class="col">
+        <h1>Lets start Trading!</h1>
         <ol>
-            <li>
-                <h3>tittle</h3>
-                <input type="text" placeholder="tittle">
-            </li>
+          <li>
+            <h3 class="h3">title</h3>
+            <input class="form-control" type="text" placeholder="tittle">
+          </li>
 
-            <li>
-                <h3>item details</h3>
-                <textarea name="details" id="" cols="30" rows="10">item details</textarea>
-            </li>
+          <li>
+            <h3 class="h3">item details</h3>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </li>
 
-            <li>
-                <h3>item photos</h3>
-                <input type="file" id="photoUpload" name="pics">
-            </li>
+          <li>
+            <h3 class="h3">item photos</h3>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Upload</span>
+              </div>
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" id="inputGroupFile01">
+                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+              </div>
+            </div>
+          </li>
 
-            <li>
-                <h3>value</h3>
-                <input type="text" placeholder="value">
-            </li>
+          <li>
+            <h3 class="h3">value</h3>
+            <input class="form-control" type="text" placeholder="value">
+          </li>
 
-            <li>
-                <h3>condition</h3>
-                <select name="condition" id="itemCondition">
-                    <option value="for parts">for parts</option>
-                    <option value="slight use">slight use</option>
-                    <option value="dead stock">dead stock</option>
-                </select>
-            </li>
+          <li>
+            <h3 class="h3">condition</h3>
+            <select name="condition" id="itemCondition">
+              <option value="Brand New">Brand New</option>
+              <option value="Slight Use">Slight Use</option>
+              <option value="Used">Used</option>
+            </select>
+          </li>
 
-            <li>
-                <h3>zipcode</h3>
-                <input type="text" placeholder="zipcode">
-            </li>
+          <li>
+            <h3 class="h3">zipcode</h3>
+            <input class="form-control" type="text" placeholder="zipcode">
+          </li>
 
         </ol>
-        <button>submit</button>
+        <button type="button" class="btn btn-success">Post it!</button>
+      </div>
     </div>
-<!-- 
-    <form>
-        <div class="form-row">
-          <div class="col-md-4 mb-3">
-            <label for="validationServer01">First name</label>
-            <input type="text" class="form-control is-valid" id="validationServer01" placeholder="First name" value="Mark" required>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for="validationServer02">Last name</label>
-            <input type="text" class="form-control is-valid" id="validationServer02" placeholder="Last name" value="Otto" required>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for="validationServerUsername">Username</label>
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroupPrepend3">@</span>
-              </div>
-              <input type="text" class="form-control is-invalid" id="validationServerUsername" placeholder="Username" aria-describedby="inputGroupPrepend3" required>
-              <div class="invalid-feedback">
-                Please choose a username.
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-md-6 mb-3">
-            <label for="validationServer03">City</label>
-            <input type="text" class="form-control is-invalid" id="validationServer03" placeholder="City" required>
-            <div class="invalid-feedback">
-              Please provide a valid city.
-            </div>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="validationServer04">State</label>
-            <input type="text" class="form-control is-invalid" id="validationServer04" placeholder="State" required>
-            <div class="invalid-feedback">
-              Please provide a valid state.
-            </div>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="validationServer05">Zip</label>
-            <input type="text" class="form-control is-invalid" id="validationServer05" placeholder="Zip" required>
-            <div class="invalid-feedback">
-              Please provide a valid zip.
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="form-check">
-            <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
-            <label class="form-check-label" for="invalidCheck3">
-              Agree to terms and conditions
-            </label>
-            <div class="invalid-feedback">
-              You must agree before submitting.
-            </div>
-          </div>
-        </div>
-        <button class="btn btn-primary" type="submit">Submit form</button>
-      </form> -->
+  </div>
 
-      <!-- <form>
-        <div class="form-group">
-          <label for="exampleFormControlFile1">Example file input</label>
-          <input type="file" class="form-control-file" id="exampleFormControlFile1">
-          <button id="submit" type="submit"> go </button>
-        </div>
-      </form>
-
-      <script>
-        document.querySelector("#submit").addEventListener("click", 
-
-        console.log(document.querySelector("#exampleFormControlFile1").HTMLInputElement))
-
-       
-        
-      
-      </script> -->
 </body>
 
 </html>
