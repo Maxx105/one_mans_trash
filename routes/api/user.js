@@ -9,7 +9,6 @@ const path = require("path");
 const multer = require("multer");
 const User = require('../../models/User');
 const Item = require('../../models/Item');
-const Message = require('../../models/Message');
 
 function signToken(userID) {
     const payload = {
