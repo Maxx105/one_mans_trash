@@ -103,7 +103,7 @@ router.get('/authenticated', passport.authenticate('jwt',{session:false}), (req,
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, './client/public/uploads')
+      cb(null, path.resolve(__dirname, 'build'))
     },
     filename: function (req, file, cb) {
       cb(null, file.originalname) 
