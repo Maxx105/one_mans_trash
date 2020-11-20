@@ -9,6 +9,7 @@ const path = require("path");
 const multer = require("multer");
 const User = require('../../models/User');
 const Item = require('../../models/Item');
+const Message = require('../../models/Message');
 
 function signToken(userID) {
     const payload = {
@@ -82,6 +83,18 @@ router.get('/userItems', passport.authenticate('jwt',{session:false}), function(
         }
     })
 });
+
+// router.get('/userMessages', passport.authenticate('jwt',{session:false}), function(req,res) {
+//     User.findById({_id: req.user._id}).populate('messages').exec((err,document) => {
+//         if(err) {
+//             res.json({message: "Error has occurred", error: true});
+//         }
+//         else {
+//             console.log(document)
+//             res.json({messages: document.messages, authenticated: true});
+//         }
+//     })
+// });
 
 router.get('/authenticated', passport.authenticate('jwt',{session:false}), (req,res) =>{
     const {_id} = req.user

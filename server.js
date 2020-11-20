@@ -17,9 +17,16 @@ if (process.env.NODE_ENV === "production") {
 // app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/treasureDB" ,{useNewUrlParser : true, useUnifiedTopology: true}, ()=>{
-  console.log('successfully connected to database');
-});
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/treasureDB',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
+
 
 const router=require('./routes/api/user');
 app.use('/api', router);
