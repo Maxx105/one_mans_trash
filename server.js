@@ -1,9 +1,35 @@
 const express = require("express");
+// const socket = require("socket.io");
 const mongoose = require("mongoose");
 // const routes = require("./routes");
 const cookieParser = require('cookie-parser');
 const app = express();
 const PORT = process.env.PORT || 3001;
+// const server = app.listen(PORT, function () {
+//   console.log(`Listening on port ${PORT}`);
+//   console.log(`http://localhost:${PORT}`);
+// });
+
+// // Static files
+// app.use(express.static("public"));
+
+// Socket setup
+// const io = socket(server);
+
+// io.on('connection', socket => {
+//   const id = socket.handshake.query.id
+//   socket.join(id)
+
+//   socket.on('send-message', ({ recipients, text }) => {
+//     recipients.forEach(recipient => {
+//       const newRecipients = recipients.filter(r => r !== recipient)
+//       newRecipients.push(id)
+//       socket.broadcast.to(recipient).emit('receive-message', {
+//         recipients: newRecipients, sender: id, text
+//       })
+//     })
+//   })
+// })
 
 // Define middleware here
 app.use(cookieParser());
