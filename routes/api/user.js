@@ -16,6 +16,7 @@ const Item = require('../../models/Item');
 const s3 = new aws.S3({
     accessKeyId: "AKIAIOJGUTPAXDM3PYUQ",
     secretAccessKey: "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",
+    region: "us-west-2",
     Bucket: "one-mans-treasure-images"
 });
 
