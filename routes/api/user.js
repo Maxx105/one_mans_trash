@@ -9,13 +9,14 @@ const path = require("path");
 const aws = require("aws-sdk");
 const multer = require("multer");
 const multerS3 = require("multer-s3");
+require('dotenv').config()
 const User = require('../../models/User');
 const Item = require('../../models/Item');
 
 const s3 = new aws.S3({
-    accessKeyId: "AKIAIOJGUTPAXDM3PYUQ",
-    secretAccessKey: "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",
-    Bucket: "one-mans-treasure-images"
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    Bucket: process.env.S3_BUCKET_NAME
 });
 
 const profileImgUpload = multer({
@@ -143,5 +144,7 @@ router.get('/authenticated', passport.authenticate('jwt',{session:false}), (req,
     const {photo} = req.user;
     res.json({isAuthenticated: true, user: {username}, id: {_id}, photo: {photo}});
 });
+
+router.get('*', ( req, res ) => res.sendFile( path.resolve( __dirname, 'client', 'build', 'index.html' ) ) );
 
 module.exports = router;
