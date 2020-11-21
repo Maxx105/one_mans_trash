@@ -4,102 +4,110 @@ import { useParams } from "react-router-dom";
 import AuthAPI from "../../utils/AuthAPI";
 import UserAPI from "../../utils/UserAPI";
 import { AuthContext } from "../../Context/AuthContext";
-
+import "./style.css";
 function Navbar() {
-    const {isAuthenticated, user, setIsAuthenticated, setUser, id, setId} = useContext(AuthContext);
-    const [userId, setUserId] = useState('');
-
+    const {isAuthenticated, user, setIsAuthenticated, setUser, id, setId, photo, setPhoto} = useContext(AuthContext);
+    // const [photo, setPhoto] = useState('');
     function onClickLogoutHandler() {
         AuthAPI.logout().then(data=>{
             if(data.success) {
-                setId('')
+                // setId('')
                 setUser(data.user)
                 setIsAuthenticated(false);
             }
         })
     }
-
-    // useEffect(() => {
-    //     UserAPI.getUser(id._id)
-    //         .then(res => console.log(res.data))
-    //         .catch(err => console.log(err.response));
-    // }, [])
-    
-
+    useEffect(() => {
+        if (id) {
+        UserAPI.getUser(id._id)
+            .then(res => {
+                setPhoto(res.data.photo)})
+            .catch(err => console.log(err.response));
+        } else {
+            return
+        }
+    }, [])
     function preLoginNavbar() {
         return (
             <>
-                <Link to="/">
-                    <li className="nav-item nav-link">
-                        Home
-                    </li>
-                </Link>
-                <Link to="/about">
-                    <li className="nav-item nav-link">
-                        About
-                    </li>
-                </Link>
-                <Link to="/login">
-                    <li className="nav-item nav-link">
-                        Login/Register
-                    </li>
-                </Link>
+                <div className="navbar-collapse" id="navbarText">
+                    <ul className="navbar-nav mr-auto">
+                        <Link to="/">
+                            <li className="nav-item nav-link">
+                                Home
+                            </li>
+                        </Link>
+                        <Link to="/about">
+                            <li className="nav-item nav-link">
+                                About
+                            </li>
+                        </Link>
+                        <Link to="/login">
+                            <li className="nav-item nav-link">
+                                Login/Register
+                            </li>
+                        </Link>
+                    </ul>
+                </div>
             </>
         )
     }
-
     function postLoginNavBar() {
         return (
             <>  
-                <Link to="/">
-                    <li className="nav-item nav-link">
-                        Home
-                    </li>
-                </Link>
-                <Link to="/createitem">
-                    <li className="nav-item nav-link">
-                        Create Item
-                    </li>
-                </Link>
-                <Link to="/about">
-                    <li className="nav-item nav-link">
-                        About
-                    </li>
-                </Link>
-                <Link to="/messages">
-                    <li className="nav-item nav-link">
-                        Messages
-                    </li>
-                </Link>
-                <Link to={"/userprofile/" + id._id}>
-                    <li className="nav-item nav-link">
-                        Profile
-                    </li>
-                </Link>
-                <Link to="/">
-                    <button type="button" 
-                        className="btn btn-link nav-item nav-link" 
-                        onClick={onClickLogoutHandler}>Logout</button>
-                </Link>
-                <li className="nav-item nav-link">
-                    Hello, {user.username}
+                <div className="navbar-collapse" id="navbarText">
+                    <ul className="navbar-nav mr-auto">
+                        <Link to="/">
+                            <li className="nav-item nav-link">
+                                Home
+                            </li>
+                        </Link>
+                        <Link to="/createitem">
+                            <li className="nav-item nav-link">
+                                Create Item
+                            </li>
+                        </Link>
+                        <Link to="/about">
+                            <li className="nav-item nav-link">
+                                About
+                            </li>
+                        </Link>
+                        <Link to="/messages">
+                            <li className="nav-item nav-link">
+                                Messages
+                            </li>
+                        </Link>
+                        <Link to={"/userprofile/" + id._id}>
+                            <li className="nav-item nav-link">
+                                Profile
+                            </li>
+                        </Link>
+                    </ul>
+                    <ul className="navbar-nav">
+                        <Link to="/">
+                            <li className="nav-item nav-link" onClick={onClickLogoutHandler}>
+                                Logout
+                            </li>
+                        </Link>
+                        <li className="nav-item nav-link disabled" id="username">
+                            Hello, {user.username}
+                            {/* <img src={URL + photo} width="55" height="55" className="img-thumbnail rounded-circle" style={{marginLeft: '10px'}}/> */}
+                        </li>
+                    </ul>
+                </div>
+                <li className="nav-item nav-link disabled" id="username">
+                    <img src={photo} width="55" height="55" className="img-thumbnail rounded-circle"/>
                 </li>
             </>
         )
     }
-
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <Link to="/">
-                <div className="navbar-brand">One Man's Trash</div>
+        <nav className="navbar navbar-expand-sm navbar-light bg-light">
+            <Link to="/" className="navbar-brand">
+                One Mans' Trash
             </Link>
-            <div className="collapse navbar-collapse" id="navbarText">
-                <ul className="navbar-nav mr-auto">
-                    { !isAuthenticated ? preLoginNavbar() : postLoginNavBar() }
-                </ul>
-            </div>
+            { !isAuthenticated ? preLoginNavbar() : postLoginNavBar() }
         </nav>
     )
 }
-
 export default Navbar; 
