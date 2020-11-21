@@ -6,9 +6,64 @@ const JWT = require('jsonwebtoken');
 const usersController = require("../../controllers/usersController");
 const itemsController = require("../../controllers/itemsController");
 const path = require("path");
+const aws = require("aws-sdk")
 const multer = require("multer");
+const multerS3 = require("multer-s3");
 const User = require('../../models/User');
 const Item = require('../../models/Item');
+
+const s3 = new aws.S3({
+    accessKeyId: "AKIAIOJGUTPAXDM3PYUQ",
+    secretAccessKey: "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",
+    Bucket: "one-mans-treasure-images"
+});
+
+const profileImgUpload = multer({
+    storage: multerS3({
+        s3: s3,
+        bucket: 'one-mans-treasure-images',
+        acl: 'public-read',
+        key: function (req, file, cb) {
+            cb(null, path.basename( file.originalname, path.extname( file.originalname ) ) + '-' + Date.now() + path.extname( file.originalname ) )
+        }
+    }),
+    limits:{ fileSize: 2000000 }, 
+    fileFilter: function( req, file, cb ){
+        checkFileType( file, cb );
+    }
+}).single('photo');
+
+function checkFileType( file, cb ){
+    const filetypes = /jpeg|jpg|png|gif/;
+    const extname = filetypes.test( path.extname( file.originalname ).toLowerCase());
+    const mimetype = filetypes.test( file.mimetype );
+    if( mimetype && extname ){
+        return cb( null, true );
+    } else {
+        cb( 'Error: Images Only!' );
+    }
+}
+
+router.post( '/upload', ( req, res ) => {profileImgUpload( req, res, ( error ) => {
+    console.log(req.file)
+    if(error){
+        console.log( 'errors', error );
+        res.json( { error: error } );
+    } else {
+        if(req.file === undefined) {
+            console.log( 'Error: No File Selected!' );
+            res.json( 'Error: No File Selected' );
+        } else {
+            const imageName = req.file.key;
+            const imageLocation = req.file.location;// Save the file name into database into profile model
+            res.json({
+                image: imageName,
+                location: imageLocation
+            });
+        }
+        }
+    });
+});
 
 function signToken(userID) {
     const payload = {
@@ -101,24 +156,26 @@ router.get('/authenticated', passport.authenticate('jwt',{session:false}), (req,
     res.json({isAuthenticated: true, user: {username}, id: {_id}});
 });
 
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, path.resolve(__dirname, '../../client/build/uploads'))
-    },
-    filename: function (req, file, cb) {
-      cb(null, file.originalname) 
-    }
-  })
+// const storage = multer.diskStorage({
+//     destination: function (req, file, cb) {
+//       cb(null, './client/public/uploads')
+//     },
+//     filename: function (req, file, cb) {
+//       cb(null, file.originalname) 
+//     }
+//   })
   
-const upload = multer({ storage: storage });
+// const upload = multer({ storage: storage });
 
-router.post('/upload', upload.single('photo'), function (req, res, next) {
-    res.json({
-        originalName: req.file.originalname,
-        destination: req.file.destination,
-        filename: req.file.filename,
-        path: req.file.path
-    })
-  });
+// router.post('/upload', upload.single('photo'), function (req, res, next) {
+//     res.json({
+//         originalName: req.file.originalname,
+//         destination: req.file.destination,
+//         filename: req.file.filename,
+//         path: req.file.path
+//     })
+//   });
+
+// router.get('/upload')
 
 module.exports = router;

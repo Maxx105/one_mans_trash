@@ -11,7 +11,7 @@ export default ({ children }) => {
 
     useEffect(() => {
         AuthAPI.isAuthenticated().then(data => {
-            setId(data.id)
+            setId(data.id);
             setUser(data.user);
             setIsAuthenticated(data.isAuthenticated);
             setIsLoaded(true);

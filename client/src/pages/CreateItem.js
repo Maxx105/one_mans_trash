@@ -17,6 +17,7 @@ function CreateItem(props) {
     });
     // const [title, setTitle] = useState("");
     // const [details, setDetails] = useState("");
+    const [photoFile, setPhotoFile] = useState("");
     const [photo, setPhoto] = useState("");
     // const [value, setValue] = useState(0);
     // const [condition, setCondition] = useState("");
@@ -25,13 +26,14 @@ function CreateItem(props) {
 
     const authContext = useContext(AuthContext);
     function handleInputChange(e) {
+        console.log(item)
         if (e.target.name === 'value' || e.target.name === 'zipcode') {
             setItem({
                 ...item, 
                 ...{user: authContext.user.username},
                 ...{userID: authContext.id._id}, 
                 [e.target.name]: parseInt(e.target.value),
-                ...{photo: photo.name}
+                ...{photo: photo}
             });
         } else {
             setItem({
@@ -39,7 +41,7 @@ function CreateItem(props) {
                 ...{user: authContext.user.username},
                 ...{userID: authContext.id._id},
                 [e.target.name]: e.target.value,
-                ...{photo: photo.name}
+                ...{photo: photo}
             });
         }
     }
@@ -53,23 +55,23 @@ function CreateItem(props) {
                 authContext.setIsAuthenticated(isAuthenticated);
             }
         })
-        const data = new FormData();
-        data.append("photo", photo);
-        const config = {
-            headers: {
-                'content-type': 'multipart/form-data'
-            }
-        };
-        ItemAPI.uploadPhoto(data, config).then(data => {
-            
-        }).catch(err => console.log(err.response))
     }
 
     function handleImageChange(event) {
         const file = event.target.files[0];
-        console.log(file);
-        setPhoto(file);
-        // setPhotoPath(data.path);
+        const data = new FormData();
+        data.append("photo", file, file.name);
+        const config = {
+            headers: {
+                'accept': 'application/json',
+                'Accept-Language': 'en-US,en;q=0.8',
+                'content-type': `multipart/form-data; bounday=${data._boundary}`
+            }
+        };
+        ItemAPI.uploadPhoto(data, config).then(data => {
+            console.log(data);
+            setPhoto(data.location);
+        }).catch(err => console.log(err.response)) 
     }
 
     return (

@@ -3,7 +3,9 @@ import HomeFeed from "../components/HomeFeed";
 import HomeFilterForm from "../components/HomeFilterForm";
 import HomeSortForm from "../components/HomeSortForm";
 // import ItemCard from "../components/ItemCard";
+import { AuthContext } from "../Context/AuthContext";
 import ItemAPI from "../utils/ItemAPI";
+import AuthAPI from "../utils/AuthAPI";
 
 function Home() {
     const [allItems, setAllItems] = useState([]);
@@ -13,6 +15,7 @@ function Home() {
     const [filterString, setFilterString] = useState('');
     const [filterParam, setFilterParam] = useState('');
     const [sortString, setSortString] = useState('');
+    const {id, setId} = useContext(AuthContext);
 
     useEffect(() => {
         ItemAPI.getAllItems().then(data=>{

@@ -12,28 +12,34 @@ function Signup(props) {
         email: "",
         photo: ""
     });
+    const [photoFile, setPhotoFile] = useState("");
     const [photo, setPhoto] = useState("");
     const [message, setMessage] = useState({});
 
     function handleInputChange(e) {
         e.preventDefault()
-        if (e.target.name === "photo") {
-            setUser({
-                ...user, 
-                [e.target.name]: e.target.files[0].name
-            });
-        } else {
-            setUser({
-                ...user, 
-                [e.target.name]: e.target.value
-            });
-        }
+        setUser({
+            ...user,
+            [e.target.name]: e.target.value
+        });
     }
 
     function handleFormSubmit(e) {
-        e.preventDefault();
+        e.preventDefault(); 
+        const data = new FormData();
+        data.append("photo", photoFile, photoFile.name);
+        const config = {
+            headers: {
+                'accept': 'application/json',
+                'Accept-Language': 'en-US,en;q=0.8',
+                'content-type': `multipart/form-data; bounday=${data._boundary}`
+            }
+        };
+        ItemAPI.uploadPhoto(data, config).then(data => {
+            setUser(...user, {photo: data.location});
+        }).catch(err => console.log(err.response))
         AuthAPI.register(user).then(data=>{
-            // console.log(data)
+            console.log(user)
             const { error } = data;
             setMessage(data);
             setTimeout(() => setMessage({}), 3000);
@@ -41,23 +47,10 @@ function Signup(props) {
                 setTimeout(() => props.history.push('/login'), 3000);
             }
         });
-        const data = new FormData();
-        data.append("photo", photo);
-        const config = {
-            headers: {
-                'content-type': 'multipart/form-data'
-            }
-        };
-        ItemAPI.uploadPhoto(data, config).then(data => {
-            // console.log(data)
-        }).catch(err => console.log(err.response))
     }
 
     function handleImageChange(e) {
-        e.preventDefault();
-        const file = e.target.files[0];
-        setPhoto(file);
-        console.log(file)
+        setPhotoFile(e.target.files[0]);
     }
 
     return (
