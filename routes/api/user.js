@@ -145,6 +145,4 @@ router.get('/authenticated', passport.authenticate('jwt',{session:false}), (req,
     res.json({isAuthenticated: true, user: {username}, id: {_id}, photo: {photo}});
 });
 
-router.get('*', ( req, res ) => res.sendFile( path.resolve( __dirname, 'client', 'build', 'index.html' ) ) );
-
 module.exports = router;
