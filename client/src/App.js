@@ -11,7 +11,7 @@ import NoMatch from './pages/NoMatch';
 import Navbar from "./components/Navbar";
 import PrivateRoute from './hocs/PrivateRoute';
 import UnPrivateRoute from './hocs/UnPrivateRoute';
-import MessagingSystem from './pages/MessagingSystem';
+// import MessagingSystem from './pages/MessagingSystem';
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
         <PrivateRoute path='/createitem' component={CreateItem}></PrivateRoute>
         <UnPrivateRoute path='/signup' component={Signup}></UnPrivateRoute>
         <Route exact path='/about' component={About}></Route>
-        <PrivateRoute exact path='/messages' component={MessagingSystem}></PrivateRoute>
+        {/* <PrivateRoute exact path='/messages' component={MessagingSystem}></PrivateRoute> */}
         <PrivateRoute path='/userprofile/:id' component={UserProfile}></PrivateRoute>
         <Route path='*' component={NoMatch}></Route>
       </Switch>
