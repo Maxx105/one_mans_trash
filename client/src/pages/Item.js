@@ -4,7 +4,7 @@ import ItemAPI from "../utils/ItemAPI";
 import UserAPI from "../utils/UserAPI";
 import {AuthContext} from "../Context/AuthContext";
 
-function Item() {
+function Home() {
     const [item, setItem] = useState({});
     const [user, setUser] = useState({});
     const authContext = useContext(AuthContext);
@@ -50,4 +50,4 @@ function Item() {
     );
 }
 
-export default Item;
+export default Home;
