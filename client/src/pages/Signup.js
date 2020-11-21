@@ -17,6 +17,7 @@ function Signup(props) {
     const [message, setMessage] = useState({});
 
     function handleInputChange(e) {
+        console.log(user)
         e.preventDefault()
         setUser({
             ...user,
