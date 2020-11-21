@@ -15,10 +15,11 @@ function Login(props) {
     function handleFormSubmit(e) {
         e.preventDefault();
         AuthAPI.login(user).then((data)=>{
-            const { isAuthenticated, user, message, id } = data;
+            const { isAuthenticated, user, message, id, photo } = data;
             if(isAuthenticated) {
                 authContext.setId(id);
                 authContext.setUser(user);
+                authContext.setPhoto(photo);
                 authContext.setIsAuthenticated(isAuthenticated);
                 // changes page to home page
                 props.history.push('/');

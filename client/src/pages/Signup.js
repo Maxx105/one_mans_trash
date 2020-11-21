@@ -20,14 +20,28 @@ function Signup(props) {
         e.preventDefault()
         setUser({
             ...user,
-            [e.target.name]: e.target.value
+            [e.target.name]: e.target.value,
+            photo: photo
         });
     }
 
     function handleFormSubmit(e) {
         e.preventDefault(); 
+        AuthAPI.register(user).then().then(data=>{
+            const { error } = data;
+            setMessage(data);
+            setTimeout(() => setMessage({}), 3000);
+            if(!error) {
+                setTimeout(() => props.history.push('/login'), 3000);
+            }
+        })
+        
+    }
+
+    function handleImageChange(e) {
+        const file = e.target.files[0]
         const data = new FormData();
-        data.append("photo", photoFile, photoFile.name);
+        data.append("photo", file);
         const config = {
             headers: {
                 'accept': 'application/json',
@@ -36,21 +50,12 @@ function Signup(props) {
             }
         };
         ItemAPI.uploadPhoto(data, config).then(data => {
-            setUser(...user, {photo: data.location});
+            setPhoto(data.location);
+            setUser({
+                ...user,
+                photo: data.location
+            });
         }).catch(err => console.log(err.response))
-        AuthAPI.register(user).then(data=>{
-            console.log(user)
-            const { error } = data;
-            setMessage(data);
-            setTimeout(() => setMessage({}), 3000);
-            if(!error) {
-                setTimeout(() => props.history.push('/login'), 3000);
-            }
-        });
-    }
-
-    function handleImageChange(e) {
-        setPhotoFile(e.target.files[0]);
     }
 
     return (

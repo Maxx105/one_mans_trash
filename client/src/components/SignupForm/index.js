@@ -13,7 +13,7 @@ function SignupForm(props) {
     }, [props.message, props.error])
 
     return (
-        <div className = "signup" onChange={props.onChange}>
+        <div className = "signup" onChange = {props.onChange}>
             <form>
                 <div className="form-group">
                     <label>First Name</label>
@@ -37,7 +37,7 @@ function SignupForm(props) {
                 </div>
                 <div className="form-group">
                     <label htmlFor="file">Profile Picture</label>
-                    <input type="file" className="form-control-file" name="photo" id="photo" onChange={props.imageChange}/>
+                    <input type="file" className="form-control-file" id="photo" onChange = {props.imageChange}/>
                 </div>
                 <button className="btn btn-primary" onClick={props.onSubmit}>Submit</button>
             </form>

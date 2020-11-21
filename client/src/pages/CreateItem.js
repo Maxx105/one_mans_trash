@@ -15,18 +15,13 @@ function CreateItem(props) {
         user: "",
         userID: ""
     });
-    // const [title, setTitle] = useState("");
-    // const [details, setDetails] = useState("");
+
     const [photoFile, setPhotoFile] = useState("");
     const [photo, setPhoto] = useState("");
-    // const [value, setValue] = useState(0);
-    // const [condition, setCondition] = useState("");
-    // const [zipcode, setZipcode] = useState(0);
-    // const [user, setUser] = useState("");
+
 
     const authContext = useContext(AuthContext);
     function handleInputChange(e) {
-        console.log(item)
         if (e.target.name === 'value' || e.target.name === 'zipcode') {
             setItem({
                 ...item, 
@@ -69,8 +64,11 @@ function CreateItem(props) {
             }
         };
         ItemAPI.uploadPhoto(data, config).then(data => {
-            console.log(data);
             setPhoto(data.location);
+            setItem({
+                ...item, 
+                photo: data.location
+            });
         }).catch(err => console.log(err.response)) 
     }
 

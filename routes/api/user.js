@@ -6,7 +6,7 @@ const JWT = require('jsonwebtoken');
 const usersController = require("../../controllers/usersController");
 const itemsController = require("../../controllers/itemsController");
 const path = require("path");
-const aws = require("aws-sdk")
+const aws = require("aws-sdk");
 const multer = require("multer");
 const multerS3 = require("multer-s3");
 const User = require('../../models/User');
@@ -45,7 +45,6 @@ function checkFileType( file, cb ){
 }
 
 router.post( '/upload', ( req, res ) => {profileImgUpload( req, res, ( error ) => {
-    console.log(req.file)
     if(error){
         console.log( 'errors', error );
         res.json( { error: error } );
@@ -138,44 +137,11 @@ router.get('/userItems', passport.authenticate('jwt',{session:false}), function(
     })
 });
 
-// router.get('/userMessages', passport.authenticate('jwt',{session:false}), function(req,res) {
-//     User.findById({_id: req.user._id}).populate('messages').exec((err,document) => {
-//         if(err) {
-//             res.json({message: "Error has occurred", error: true});
-//         }
-//         else {
-//             console.log(document)
-//             res.json({messages: document.messages, authenticated: true});
-//         }
-//     })
-// });
-
 router.get('/authenticated', passport.authenticate('jwt',{session:false}), (req,res) =>{
     const {_id} = req.user
     const {username} = req.user;
-    res.json({isAuthenticated: true, user: {username}, id: {_id}});
+    const {photo} = req.user;
+    res.json({isAuthenticated: true, user: {username}, id: {_id}, photo: {photo}});
 });
-
-// const storage = multer.diskStorage({
-//     destination: function (req, file, cb) {
-//       cb(null, './client/public/uploads')
-//     },
-//     filename: function (req, file, cb) {
-//       cb(null, file.originalname) 
-//     }
-//   })
-  
-// const upload = multer({ storage: storage });
-
-// router.post('/upload', upload.single('photo'), function (req, res, next) {
-//     res.json({
-//         originalName: req.file.originalname,
-//         destination: req.file.destination,
-//         filename: req.file.filename,
-//         path: req.file.path
-//     })
-//   });
-
-// router.get('/upload')
 
 module.exports = router;

@@ -5,7 +5,7 @@ import HomeSortForm from "../components/HomeSortForm";
 // import ItemCard from "../components/ItemCard";
 import { AuthContext } from "../Context/AuthContext";
 import ItemAPI from "../utils/ItemAPI";
-import AuthAPI from "../utils/AuthAPI";
+import UserAPI from "../utils/UserAPI";
 
 function Home() {
     const [allItems, setAllItems] = useState([]);
@@ -15,13 +15,20 @@ function Home() {
     const [filterString, setFilterString] = useState('');
     const [filterParam, setFilterParam] = useState('');
     const [sortString, setSortString] = useState('');
-    const {id, setId} = useContext(AuthContext);
+    const {id, setId, photo, setPhoto} = useContext(AuthContext);
 
     useEffect(() => {
-        ItemAPI.getAllItems().then(data=>{
+        ItemAPI.getAllItems().then(data => {
             setItems(data)
             setAllItems(data.slice(0))
         });
+        if (id) {
+            UserAPI.getUser(id._id).then(data => {
+                setPhoto(data.data.photo)
+            })
+        } else {
+            return
+        }
     }, []);
 
     useEffect(() => {
