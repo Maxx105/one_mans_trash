@@ -5,11 +5,9 @@ import AuthAPI from "../../utils/AuthAPI";
 import UserAPI from "../../utils/UserAPI";
 import { AuthContext } from "../../Context/AuthContext";
 import "./style.css";
-
 function Navbar() {
-    const {isAuthenticated, user, setIsAuthenticated, setUser, id, setId} = useContext(AuthContext);
-    const [photo, setPhoto] = useState('');
-
+    const {isAuthenticated, user, setIsAuthenticated, setUser, id, setId, photo, setPhoto} = useContext(AuthContext);
+    // const [photo, setPhoto] = useState('');
     function onClickLogoutHandler() {
         AuthAPI.logout().then(data=>{
             if(data.success) {
@@ -19,18 +17,16 @@ function Navbar() {
             }
         })
     }
-
     useEffect(() => {
         if (id) {
         UserAPI.getUser(id._id)
-            .then(res => setPhoto(res.data.photo))
+            .then(res => {
+                setPhoto(res.data.photo)})
             .catch(err => console.log(err.response));
         } else {
             return
         }
     }, [])
-    
-
     function preLoginNavbar() {
         return (
             <>
@@ -56,7 +52,6 @@ function Navbar() {
             </>
         )
     }
-
     function postLoginNavBar() {
         return (
             <>  
@@ -106,16 +101,13 @@ function Navbar() {
             </>
         )
     }
-
     return (
         <nav className="navbar navbar-expand-sm navbar-light bg-light">
             <Link to="/" className="navbar-brand">
-                {/* <img src="https://cdn1.iconfinder.com/data/icons/cash-coin-essentials-colored/48/JD-27-512.png" width="40" height="40" class="d-inline-block align-top" alt="" loading="lazy"/> */}
                 One Mans' Trash
             </Link>
             { !isAuthenticated ? preLoginNavbar() : postLoginNavBar() }
         </nav>
     )
 }
-
 export default Navbar; 
