@@ -14,9 +14,9 @@ const User = require('../../models/User');
 const Item = require('../../models/Item');
 
 const s3 = new aws.S3({
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-    Bucket: process.env.S3_BUCKET_NAME
+    accessKeyId: "AKIAIOJGUTPAXDM3PYUQ",
+    secretAccessKey: "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",
+    Bucket: "one-mans-treasure-images"
 });
 
 const profileImgUpload = multer({
