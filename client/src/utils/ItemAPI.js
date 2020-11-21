@@ -36,7 +36,20 @@ const ItemAPI = {
     }, 
     uploadPhoto: function(data, config) {
         return axios.post("/api/upload", data, config)
-        .then(res => res.data)
+        .then(res => res.data
+            // {
+            // // console.log(res.data)
+            // if (res.status === 200) {
+            //     if ('LIMIT_FILE_SIZE' === res.data.error.code) {
+            //         console.log("File too large. Max size: 2MB")
+            //     } else {
+            //         console.log(res.data);
+            //     }
+            // } else {
+            //     let fileName = res.data;
+            //     console.log('fileName', fileName)
+            // }}
+        )
         .catch(err => console.log(err.response))
     }
 }

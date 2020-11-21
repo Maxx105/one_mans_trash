@@ -11,7 +11,7 @@ function CreateItemForm(props) {
                 <input className="form-control" type="text" placeholder="Default input" name="photo" onChange={props.onChange}/> */}
                 <div className="form-group">
                     <h3><label htmlFor="file">Photo:</label></h3>
-                    <input type="file" className="form-control-file" name="photo" id="file" onChange={props.imageChange}/>
+                    <input type="file" className="form-control-file" id="file" onChange={props.imageChange}/>
                 </div>
                 <h3>Value:</h3>
                 <input className="form-control" type="text" placeholder="Default input" name="value" onChange={props.onChange}/>

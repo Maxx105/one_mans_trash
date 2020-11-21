@@ -3,7 +3,6 @@ import "./style.css";
 import { Link } from "react-router-dom";
 
 function HomeFeed(props) {
-    const URL = "/uploads/";
     return (
         <div className = "row">
             {
@@ -12,7 +11,7 @@ function HomeFeed(props) {
                         <Link to={"/item/" + item._id}  id="home-item-card-link">
                             <div className="card shadow" style={{margin: "10px"}}>
                                 {item.photo ?
-                                    <img src={URL + item.photo} className="card-img-top img-thumbnail" alt={item.title}/> :
+                                    <img src={item.photo} className="card-img-top img-thumbnail" alt={item.title}/> :
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png" className="card-img-top" alt={item.title}/>
                                 }
                                 <div className="card-body">

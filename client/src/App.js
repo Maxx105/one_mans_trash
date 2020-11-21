@@ -17,7 +17,7 @@ function App() {
   return (
     <Router>
     <div>
-      <Navbar collapseOnSelect></Navbar>
+      <Navbar/>
       <Switch>
         <Route exact path='/' component={Home}></Route>
         <PrivateRoute path='/item/:id' component={Item}></PrivateRoute>
