@@ -72,11 +72,11 @@ function Navbar() {
                                 About
                             </li>
                         </Link>
-                        <Link to="/messages">
+                        {/* <Link to="/messages">
                             <li className="nav-item nav-link">
                                 Messages
                             </li>
-                        </Link>
+                        </Link> */}
                         <Link to={"/userprofile/" + id._id}>
                             <li className="nav-item nav-link">
                                 Profile
