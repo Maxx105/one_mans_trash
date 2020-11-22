@@ -16,8 +16,9 @@ function CreateItem(props) {
         userID: ""
     });
 
-    const [photoFile, setPhotoFile] = useState("");
     const [photo, setPhoto] = useState("");
+    const [message, setMessage] = useState("");
+    const [error, setError] = useState("");
 
 
     const authContext = useContext(AuthContext);
@@ -43,7 +44,9 @@ function CreateItem(props) {
     function handleFormSubmit(event) {
         event.preventDefault();
         ItemAPI.postItem(item).then((data)=>{
-            const { isAuthenticated, user, message } = data;
+            const { isAuthenticated, user, message, error } = data;
+            setMessage(message);
+            setError(error);
             setTimeout(() => props.history.push('/userprofile/' + authContext.id._id), 3000);
             if(isAuthenticated) {
                 authContext.setUser(user);
@@ -75,6 +78,8 @@ function CreateItem(props) {
     return (
         <div className = "container">
             <CreateItemFrom
+                error = {error}
+                message = {message}
                 onChange = {handleInputChange}
                 onClick = {handleFormSubmit}
                 imageChange = {handleImageChange}
