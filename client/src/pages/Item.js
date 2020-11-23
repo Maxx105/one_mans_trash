@@ -33,7 +33,7 @@ function Item() {
                             <p className="category-text"><span style ={{fontWeight: "bolder" }}> {'Details:'} </span> {item.details} </p>
                             <p className="category-text"><span style ={{fontWeight: "bolder" }}> {'Condition:'}</span>{item.condition}</p>
                             <p className="category-text"><span style ={{fontWeight: "bolder" }}> {'User:'} </span> {item.user}</p>
-                            <p className="category-text"><span style ={{fontWeight: "bolder" }}> {'Value:'}</span> {item.value}</p>
+                            <p className="category-text"><span style ={{fontWeight: "bolder" }}> {'Value:'}</span> {`$${item.value}`}</p>
                             <p className="category-text"> <span style ={{fontWeight: "bolder" }}> {'Zipcode:'}</span> {item.zipcode} </p>
                         </div>
                     </div>
