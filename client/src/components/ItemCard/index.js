@@ -20,7 +20,7 @@ function ItemCard(props) {
                     <div className = "col-md-3 col-sm-6 col-xs-12" key={item._id}>
                         <div className="card" style={{margin: "20px"}}>
                             <Link to={"/item/" + item._id} id="item-card-link">
-                                <div>
+                                <div className = "photo">
                                     {item.photo ?
                                         <img src={item.photo} className="card-img-top img-thumbnail" alt={item.title}/> :
                                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png" className="card-img-top" alt={item.title}/>

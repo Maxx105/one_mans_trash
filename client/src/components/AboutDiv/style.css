@@ -20,7 +20,7 @@ body{
 
 #devBanner {
     border-radius: 25px;
-    background-color: beige;
+    background-color: #f5f5f5;
     border: rgb(4, 41, 121) solid 5px;
 }
 
@@ -29,7 +29,7 @@ body{
 } */
 
 #howBanner {
-    background-color: beige;
+    background-color:#f5f5f5;
     border-radius: 25px;
     padding: 10px;
     width: fit-content;
@@ -37,7 +37,7 @@ body{
 }
 
 #header {
-    background-color: beige;
+    background-color: #f5f5f5;
     border: rgb(66, 60, 161) solid 6px;
     border-radius: 25px;
     margin: 10px;
