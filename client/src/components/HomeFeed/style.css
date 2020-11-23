@@ -14,3 +14,22 @@
 .card:active {
     background-color: grey;
 }
+
+.title{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 36px;
+    line-height: 1;;
+  }
+
+  .body-text{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 24px;
+    line-height: 1;;
+  }
+
+  .category-text{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+    line-height: 1;;
+  }
