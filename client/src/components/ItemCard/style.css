@@ -14,3 +14,15 @@
     font-size: 36px;
     line-height: 1;;
   }
+
+  .btn {
+     border-radius: 25;
+     margin: 15px; 
+    
+     
+  }
+
+  .photo{
+    padding: 25px;
+    margin: auto;
+  }
