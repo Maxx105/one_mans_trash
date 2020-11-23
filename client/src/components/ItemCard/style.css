@@ -3,26 +3,25 @@
     text-decoration: none;
 }
 
-.category-text{
+.ategory-text{
     font-family: "Comic Sans MS", cursive, sans-serif;
     font-size: 24px;
     line-height: 1;;
   }
 
-  .title{
+  title{
     font-family: "Comic Sans MS", cursive, sans-serif;
     font-size: 36px;
     line-height: 1;;
   }
 
-  .btn {
+  .delete {
      border-radius: 25;
      margin: 15px; 
-    
      
   }
 
-  .photo{
+  #photo{
     padding: 25px;
     margin: auto;
   }
