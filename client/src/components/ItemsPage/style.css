@@ -1,14 +1,14 @@
   .card {
     background-color: rgba(255, 255, 255, 0.8);
     border: solid 2.5px rgb(23, 25, 143);
-    padding: 50px;
+    /* padding: 25px;  */
     font-size: 30px;
     text-align: center;
     justify-content: center;
   }
 
   .img{
-    border-left: 1px solid black;
+    border-left: solid 2px black;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     background-color: darkgrey;
@@ -18,8 +18,7 @@
 
   .category-text{
     font-family: "Comic Sans MS", cursive, sans-serif;
-    font-weight: bolder;
-    font-size: 30px;
+    font-size: 24px;
     line-height: 1;;
   }
 
@@ -31,7 +30,7 @@
 
   .body-text{
     font-family: "Comic Sans MS", cursive, sans-serif;
-    font-size: 24px;
+    font-size: 36px;
     line-height: 1;;
   }
 
