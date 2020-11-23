@@ -53,13 +53,15 @@ body{
     border: rgb(43, 109, 209) solid 5px;
     border-radius: 25px;
 }
-img{
+/* img{
     border: black 3px solid;
     border-radius: 25px;
-}
+} */
 
 .devPics{
    height: 200px;
+   border: black 3px solid;
+   border-radius: 25px;
 }
 
 .icon{
@@ -67,4 +69,6 @@ img{
     padding: 3px;
     margin: 1px;
     text-align: center;
+    border: black 3px solid;
+    border-radius: 25px;
 }

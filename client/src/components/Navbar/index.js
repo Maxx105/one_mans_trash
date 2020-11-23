@@ -105,7 +105,7 @@ function Navbar() {
     return (
         <nav className="navbar navbar-expand-sm navbar-light bg-light">
             <Link to="/" className="navbar-brand">
-            <img src={icon} width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy"/>
+            <img id="nav-icon" src={icon} width="30" height="30" className="d-inline-block align-top" alt="" loading="lazy"/>
                 ne Mans' Trash
             </Link>
             { !isAuthenticated ? preLoginNavbar() : postLoginNavBar() }
