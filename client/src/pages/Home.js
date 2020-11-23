@@ -16,9 +16,8 @@ function Home() {
     const [filterString, setFilterString] = useState('');
     const [filterParam, setFilterParam] = useState('');
     const [sortString, setSortString] = useState('');
-    const {id, setId, photo, setPhoto} = useContext(AuthContext);
+    const {id, setPhoto} = useContext(AuthContext);
     const [location, setLocation] = useState("");
-    const [distance, setDistance] = useState("");
 
     useEffect(() => {
         ItemAPI.getAllItems().then(data => {
@@ -136,7 +135,14 @@ function Home() {
             document.getElementById("distance-filter").value = "";
         }
     }
-
+    function handleUseMyLocationSubmit(e) {
+        ZipAPI.getZipbyLocation().then(data => {
+            const {city, region_code, country_code, zip_code} = data.data;
+            const location = `${city}, ${region_code}, ${country_code} ${zip_code}`
+            document.getElementById("distance-filter").value = location;
+            setLocation(zip_code);
+        })
+    }
     return (
         <div>
             <div className = "container">
@@ -151,6 +157,7 @@ function Home() {
                     onSortChange = {handleSortChange}
                 ></HomeSortForm>
                 <HomeZipFilterForm
+                    onUseMyLocationClick = {handleUseMyLocationSubmit}
                     onLocationChange = {handleLocationInputChange}
                     onDistanceChange = {handleDistanceInputChange}
                 ></HomeZipFilterForm>
