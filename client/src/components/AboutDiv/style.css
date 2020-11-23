@@ -2,7 +2,7 @@ p{
     margin: 15px;
 }
 body {
-    background-image: url('https://i.pinimg.com/736x/1a/bb/9a/1abb9a72e471d4ce46f1b5f06bc1f922.jpg');
+    /* background-image: url('https://i.pinimg.com/736x/1a/bb/9a/1abb9a72e471d4ce46f1b5f06bc1f922.jpg'); */
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -12,8 +12,8 @@ body {
     margin: 5px;
 } */
 
-#aboutBody{
-    background-image: url('../../backgrounds/1.jpg');
+body{
+    background-image: url('../../assets/3.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -21,24 +21,24 @@ body {
 #devBanner {
     border-radius: 25px;
     background-color: beige;
-    border: orange solid 10px;
+    border: rgb(4, 41, 121) solid 10px;
 }
 
-* {
+/* * {
     text-align: center;
-}
+} */
 
 #howBanner {
     background-color: beige;
     border-radius: 25px;
     padding: 10px;
     width: fit-content;
-    border: yellow solid 8px;
+    border: rgb(23, 25, 143) solid 8px;
 }
 
 #header {
     background-color: beige;
-    border: brown solid 10px;
+    border: rgb(66, 60, 161) solid 10px;
     border-radius: 25px;
     margin: 10px;
 }
@@ -49,10 +49,14 @@ body {
 #devCards{
     margin: 10px;
     padding: 10px;
-    border: burlywood solid 10px;
+    border: rgb(43, 109, 209) solid 10px;
     border-radius: 25px;
 }
 img{
     border: black 3px solid;
     border-radius: 25px;
+}
+
+.devPics{
+   height: 200px;
 }
