@@ -4,6 +4,8 @@ import michael from "../../assets/michael.png"
 import fernando from "../../assets/fernando.PNG"
 import maxx from "../../assets/maxx.png"
 import jonathan from "../../assets/jonathan.png"
+import github from "../../assets/github.png"
+import link from "../../assets/linkedin.png"
 function AboutDiv(props) {
     return (
 
@@ -60,14 +62,18 @@ function AboutDiv(props) {
                         <div className="container">
                             <div className="row">
                                 <div className="col devCard">
-                                    <img src= { michael } className="devPics" alt="" srcSet="" />
+                                    <img src={michael} className="devPics" alt="" srcSet="" />
                                     <address>
                                         <a href="mailto:trujillom9@gmail.com">Michael Trujillo</a><br />
                                         <a href="https://www.linkedin.com/in/michael-trujillo-017696188/" target="_blank"
-                                            rel="noopener noreferrer">Linked in</a>
-                                        <br />
+                                            rel="noopener noreferrer">
+                                            <img src={link} className="icon" ></img>
+                                        </a>
+
                                         <a href="https://github.com/michaeltrujillo" target="_blank"
-                                            rel="noopener noreferrer">Github</a>
+                                            rel="noopener noreferrer">
+                                            <img src={github} className="icon"></img>
+                                        </a>
                                         <br />
                       Irvine, CA
                       <br />
@@ -76,14 +82,18 @@ function AboutDiv(props) {
                                 </div>
                                 <div className="col devCard">
 
-                                    <img src= {maxx} className="devPics" alt="" srcSet="" />
+                                    <img src={maxx} className="devPics" alt="" srcSet="" />
                                     <address>
                                         <a href="mailto:maxxsanner105@gmail.com">Maxx Sanner</a><br />
                                         <a href="https://www.linkedin.com/in/maxx-sanner-49247b169" target="_blank"
-                                            rel="noopener noreferrer">Linked in</a>
-                                        <br />
+                                            rel="noopener noreferrer">
+                                                <img src={link} className="icon" ></img>
+                                            </a>
+                                      
                                         <a href="https://github.com/Maxx105" target="_blank"
-                                            rel="noopener noreferrer">Github</a>
+                                            rel="noopener noreferrer">
+                                                <img src={github} className="icon"></img>
+                                            </a>
                                         <br />
                       Huntington Beach, CA
                       <br />
@@ -94,13 +104,17 @@ function AboutDiv(props) {
                             <div className="row">
                                 <div className="col devCard">
 
-                                    <img src= {fernando} className="devPics" alt="" srcSet="" />
+                                    <img src={fernando} className="devPics" alt="" srcSet="" />
                                     <address>
                                         <a href="mailto:fangulo82@gmail.com">Fernando Angulo Donoso</a><br />
                                         <a href="http://www.linkedin.com/in/fernando-angulo-donoso-b3749026" target="_blank"
-                                            rel="noopener noreferrer">Linked in</a>
-                                        <br />
-                                        <a href="https://github.com/Fer82" target="_blank" rel="noopener noreferrer">Github</a>
+                                            rel="noopener noreferrer">
+                                                <img src={link} className="icon" ></img>
+                                            </a>
+                               
+                                        <a href="https://github.com/Fer82" target="_blank" rel="noopener noreferrer">
+                                        <img src={github} className="icon"></img>
+                                        </a>
                                         <br />
                       Newport Beach CA
                       <br />
@@ -109,14 +123,18 @@ function AboutDiv(props) {
                                 </div>
                                 <div className="col devCard">
 
-                                    <img src= {jonathan} className="devPics" alt="" srcSet="" />
+                                    <img src={jonathan} className="devPics" alt="" srcSet="" />
                                     <address>
                                         <a href="mailto:jonathanhui.hk@gmail.com">Jonathan Hui</a><br />
                                         <a href="https://www.linkedin.com/in/jonathan-hui-b492421a1/" target="_blank"
-                                            rel="noopener noreferrer">Linked in</a>
-                                        <br />
-                                        <a href="https://github.com/michaeltrujillo" target="_blank"
-                                            rel="noopener noreferrer">Github</a>
+                                            rel="noopener noreferrer">
+                                                <img src={link} className="icon" ></img>
+                                            </a>
+                                     
+                                        <a href="https://github.com/Jthui95" target="_blank"
+                                            rel="noopener noreferrer">
+                                                <img src={github} className="icon"></img>
+                                            </a>
                                         <br />
                       San Ramon CA
                       <br />

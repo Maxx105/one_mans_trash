@@ -1,0 +1,11 @@
+#formCard{
+    border: rgb(20, 36, 126) 5px solid;
+    background-color: beige;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 10px;
+}
+
+#createItemBtn{
+    margin: 10px;
+}
