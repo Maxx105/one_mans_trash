@@ -33,7 +33,7 @@ function ItemCard(props) {
                                     </div>
                                 </div>
                             </Link>
-                            <button className = "btn btn-danger" onClick={() => deleteItem(item._id)}>Delete</button>
+                            <button className = "btn btn-danger delete"  onClick={() => deleteItem(item._id)}>Delete</button>
                         </div>
                         
                     </div>
