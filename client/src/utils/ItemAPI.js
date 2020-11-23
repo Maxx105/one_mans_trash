@@ -2,7 +2,7 @@ import axios from "axios";
 
 const ItemAPI = {
     getUserItems: function() {
-        return axios.get("/api/userItems")
+        return axios.get("/api/user/userItems")
         .then(res => res.data)
         .catch(err => {
             if (err.response.status === 401) {
@@ -11,7 +11,7 @@ const ItemAPI = {
         });   
     },
     getAllItems: function() {
-        return axios.get("/api/allItems")
+        return axios.get("/api/user/allItems")
         .then(res => res.data)
         .catch(err => {
             if (err.response.status === 401) {
@@ -20,13 +20,13 @@ const ItemAPI = {
         });   
     },
     getItem: function(id) {
-        return axios.get("/api/allItems/" + id);
+        return axios.get("/api/user/allItems/" + id);
     },
     deleteItem: function(id) {
-        return axios.delete("/api/allItems/" + id) 
+        return axios.delete("/api/user/allItems/" + id) 
     },
     postItem: function(item) {
-        return axios.post("/api/allItems", item)
+        return axios.post("/api/user/allItems", item)
         .then(res => res.data)
         .catch(err => {
             if (err.response.status === 401) {
@@ -35,7 +35,7 @@ const ItemAPI = {
         });
     }, 
     uploadPhoto: function(data, config) {
-        return axios.post("/api/upload", data, config)
+        return axios.post("/api/user/upload", data, config)
         .then(res => res.data
             // {
             // // console.log(res.data)
