@@ -19,7 +19,7 @@ function HomeFeed(props) {
                                      {/* <p className="category-text">{'Details:'} </p><p className="body-text">{item.details}</p>
                             <p className="category-text">{'Condition:'}</p><p className="body-text">{item.condition}</p> 
                             <p className="category-text">{'User:'}</p><p className="body-text"> {item.user}</p> */}
-                           <p className="category-text"><span style ={{fontWeight: "bolder" }}> {'Value:'}</span> {item.value}</p> 
+                           <p className="category-text"><span style ={{fontWeight: "bolder" }}> {'Value: '}</span> {`$${item.value}`}</p> 
                             <p className="category-text"> <span style ={{fontWeight: "bolder" }}> {'Zipcode:'}</span> {item.zipcode} </p>
                                 </div>
                             </div>
