@@ -30,11 +30,11 @@ function Item() {
                                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png" alt={item.title} className="img-fluid img-thumbnail" />
                             }
                             <h5 className="title">{item.title}</h5>
-                            <p className="category-text">{'Details:'} </p><p className="body-text">{item.details}</p>
-                            <p className="category-text">{'Condition:'}</p><p className="body-text">{item.condition}</p>
-                            <p className="category-text">{'User:'}</p><p className="body-text"> {item.user}</p>
-                            <p className="category-text">{'Value:'}</p><p className="body-text">{`$ ${item.value}`}</p>
-                            <p className="category-text">{'Zipcode:'}</p><p className="body-text">{item.zipcode}</p>
+                            <p className="category-text"><span style ={{fontWeight: "bolder" }}> {'Details:'} </span> {item.details} </p>
+                            <p className="category-text"><span style ={{fontWeight: "bolder" }}> {'Condition:'}</span>{item.condition}</p>
+                            <p className="category-text"><span style ={{fontWeight: "bolder" }}> {'User:'} </span> {item.user}</p>
+                            <p className="category-text"><span style ={{fontWeight: "bolder" }}> {'Value:'}</span> {item.value}</p>
+                            <p className="category-text"> <span style ={{fontWeight: "bolder" }}> {'Zipcode:'}</span> {item.zipcode} </p>
                         </div>
                     </div>
                 </div>

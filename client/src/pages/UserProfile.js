@@ -47,6 +47,8 @@ function UserProfile() {
             <ItemCard
                 items = {items}
                 loadItems = {() => loadItems()}
+                className = "col-md-4 col-sm-12" 
+                style = {{margin: "auto", marginTop: "10px"}}
             ></ItemCard>
         </div>
     );
