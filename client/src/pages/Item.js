@@ -43,7 +43,7 @@ function Item() {
                 <div className="row">
                     <div className = "col-md-4 col-sm-12" style = {{margin: "auto", marginTop: "10px"}}>
                         <div className="card">
-                        <a href={`mailto: + ${user.email}?subject=Hi, I am interested in your ${item.title} on One Man's Trash!`}>
+                        <a href={`mailto:${user.email}?subject=Hi, I am interested in your ${item.title} on One Man's Trash!`}>
                             {user.photo ?
                                 <img src={user.photo} className="card-img-top img-fluid img-thumbnail" alt={user.username} /> :
                                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png" className="card-img-top img-fluid img-thumbnail" alt={user.username} />
