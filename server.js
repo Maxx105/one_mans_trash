@@ -1,7 +1,7 @@
 const express = require("express");
 // const socket = require("socket.io");
 const mongoose = require("mongoose");
-// const routes = require("./routes");
+const routes = require("./routes");
 const cookieParser = require('cookie-parser');
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -38,13 +38,6 @@ app.use(express.json());
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
-  app.get(function(req, res) {
-    res.sendFile(path.join(__dirname, './client/build/index.html'), function(err) {
-      if (err) {
-        res.status(500).send(err)
-      }
-    })
-  })
 }
 
 // Connect to the Mongo DB
@@ -58,9 +51,9 @@ mongoose.connect(
   }
 );
 
-
-const router=require('./routes/api/user');
-app.use('/api', router);
+app.use(routes);
+// const router=require('./routes/api/user');
+// app.use('/api', router);
 // const allRouter=require('./routes/api/all');
 // app.use('/all', allRouter);
 
