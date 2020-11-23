@@ -3,5 +3,7 @@
 }
 
 .navbar {
-    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,0.7066176812521884) 50%, rgba(252,176,69,1) 100%);
+    background: radial-gradient(circle, rgb(27, 50, 167) 0%, rgb(72, 112, 192) 100%);
+    border-bottom: solid 2px black;
+    
 }

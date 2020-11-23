@@ -1,5 +1,9 @@
 import React from "react";
 import "./style.css";
+import michael from "../../assets/michael.png"
+import fernando from "../../assets/fernando.PNG"
+import maxx from "../../assets/maxx.png"
+import jonathan from "../../assets/jonathan.png"
 function AboutDiv(props) {
     return (
 
@@ -56,7 +60,7 @@ function AboutDiv(props) {
                         <div className="container">
                             <div className="row">
                                 <div className="col devCard">
-                                    <img src="assets/michael.JPG" alt="" srcset="" />
+                                    <img src= { michael } className="devPics" alt="" srcSet="" />
                                     <address>
                                         <a href="mailto:trujillom9@gmail.com">Michael Trujillo</a><br />
                                         <a href="https://www.linkedin.com/in/michael-trujillo-017696188/" target="_blank"
@@ -72,7 +76,7 @@ function AboutDiv(props) {
                                 </div>
                                 <div className="col devCard">
 
-                                    <img src="assets/maxx.png" alt="" srcset="" />
+                                    <img src= {maxx} className="devPics" alt="" srcSet="" />
                                     <address>
                                         <a href="mailto:maxxsanner105@gmail.com">Maxx Sanner</a><br />
                                         <a href="https://www.linkedin.com/in/maxx-sanner-49247b169" target="_blank"
@@ -90,7 +94,7 @@ function AboutDiv(props) {
                             <div className="row">
                                 <div className="col devCard">
 
-                                    <img src="assets/fernando.PNG" alt="" srcset="" />
+                                    <img src= {fernando} className="devPics" alt="" srcSet="" />
                                     <address>
                                         <a href="mailto:fangulo82@gmail.com">Fernando Angulo Donoso</a><br />
                                         <a href="http://www.linkedin.com/in/fernando-angulo-donoso-b3749026" target="_blank"
@@ -105,7 +109,7 @@ function AboutDiv(props) {
                                 </div>
                                 <div className="col devCard">
 
-                                    <img src="assets/jonathan.png" alt="" srcset="" />
+                                    <img src= {jonathan} className="devPics" alt="" srcSet="" />
                                     <address>
                                         <a href="mailto:jonathanhui.hk@gmail.com">Jonathan Hui</a><br />
                                         <a href="https://www.linkedin.com/in/jonathan-hui-b492421a1/" target="_blank"
