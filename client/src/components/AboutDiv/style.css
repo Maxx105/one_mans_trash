@@ -12,6 +12,12 @@ body {
     margin: 5px;
 } */
 
+#aboutBody{
+    background-image: url('../../backgrounds/1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 #devBanner {
     border-radius: 25px;
     background-color: beige;
