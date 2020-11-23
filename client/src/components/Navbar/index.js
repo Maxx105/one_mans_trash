@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import AuthAPI from "../../utils/AuthAPI";
 import UserAPI from "../../utils/UserAPI";
 import { AuthContext } from "../../Context/AuthContext";
+import icon from "../../assets/trashLogo.jpg"
 import "./style.css";
 function Navbar() {
     const {isAuthenticated, user, setIsAuthenticated, setUser, id, setId, photo, setPhoto} = useContext(AuthContext);
@@ -104,7 +105,8 @@ function Navbar() {
     return (
         <nav className="navbar navbar-expand-sm navbar-light bg-light">
             <Link to="/" className="navbar-brand">
-                One Mans' Trash
+            <img src={icon} width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy"/>
+                ne Mans' Trash
             </Link>
             { !isAuthenticated ? preLoginNavbar() : postLoginNavBar() }
         </nav>
