@@ -1,5 +1,5 @@
 p{
-    margin: 15px;
+    margin: 25px;
 }
 body {
     /* background-image: url('https://i.pinimg.com/736x/1a/bb/9a/1abb9a72e471d4ce46f1b5f06bc1f922.jpg'); */
@@ -21,7 +21,7 @@ body{
 #devBanner {
     border-radius: 25px;
     background-color: beige;
-    border: rgb(4, 41, 121) solid 10px;
+    border: rgb(4, 41, 121) solid 5px;
 }
 
 /* * {
@@ -33,14 +33,15 @@ body{
     border-radius: 25px;
     padding: 10px;
     width: fit-content;
-    border: rgb(23, 25, 143) solid 8px;
+    border: rgb(23, 25, 143) solid 6px;
 }
 
 #header {
     background-color: beige;
-    border: rgb(66, 60, 161) solid 10px;
+    border: rgb(66, 60, 161) solid 6px;
     border-radius: 25px;
     margin: 10px;
+    text-align: center;
 }
 #descriptionLeft{
     margin-top: 10%;
@@ -49,7 +50,7 @@ body{
 #devCards{
     margin: 10px;
     padding: 10px;
-    border: rgb(43, 109, 209) solid 10px;
+    border: rgb(43, 109, 209) solid 5px;
     border-radius: 25px;
 }
 img{
@@ -59,4 +60,11 @@ img{
 
 .devPics{
    height: 200px;
+}
+
+.icon{
+    width: 50px;
+    padding: 3px;
+    margin: 1px;
+    text-align: center;
 }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./style.css";
 function CreateItemForm(props) {
     const [alertColor, setAlertColor] = useState('');
 
@@ -12,6 +13,7 @@ function CreateItemForm(props) {
 
     return (
         <div>
+           <div id="formCard">
             <h3>Title:</h3>
             <input className="form-control" type="text" placeholder="Default input" name="title" onChange={props.onChange}/>
             <h3>Details:</h3>
@@ -33,7 +35,7 @@ function CreateItemForm(props) {
             </select>
             <h3>Zipcode:</h3>
             <input className="form-control" type="text" placeholder="Default input" name="zipcode" onChange={props.onChange}/>
-            <button onClick = {props.onClick} className="btn btn-primary">Submit</button>
+            <button id="createItemBtn" onClick = {props.onClick} className="btn btn-primary">Submit</button>
             <br/>
             <br/>
             {props.message  ? 
@@ -46,6 +48,7 @@ function CreateItemForm(props) {
             </div> :
             null
             }
+            </div>
         </div>
     );
 }
