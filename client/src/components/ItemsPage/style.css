@@ -1,15 +1,7 @@
-.grid-container{
-        display: grid;
-        grid-column-gap: 75px;
-        grid-template-columns: auto auto auto;
-        padding: 10px;
-        justify-content: center;
-
-}
   .card {
     background-color: rgba(255, 255, 255, 0.8);
-    border: 2px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
+    border: solid 2.5px rgb(23, 25, 143);
+    padding: 50px;
     font-size: 30px;
     text-align: center;
     justify-content: center;
@@ -24,8 +16,22 @@
     opacity: 1;
   }
 
-  .card-text{
+  .category-text{
     font-family: "Comic Sans MS", cursive, sans-serif;
-    font-size: 14px;
+    font-weight: bolder;
+    font-size: 30px;
     line-height: 1;;
   }
+
+  .title{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 36px;
+    line-height: 1;;
+  }
+
+  .body-text{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 24px;
+    line-height: 1;;
+  }
+

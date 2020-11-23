@@ -15,11 +15,12 @@ function HomeFeed(props) {
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png" className="card-img-top" alt={item.title}/>
                                 }
                                 <div className="card-body">
-                                    <h5 className="card-title">{item.title}</h5>
-                                    <p className="card-text">{`Description: ${item.details}`}</p>
-                                    <p className="card-text">{`Value: $${item.value}`}</p>
-                                    <p className="card-text">{`Condition: ${item.condition}`}</p>
-                                    <p className="card-text">{`User: ${item.user}`}</p>
+                                    <h5 className="title">{item.title}</h5>
+                                     {/* <p className="category-text">{'Details:'} </p><p className="body-text">{item.details}</p>
+                            <p className="category-text">{'Condition:'}</p><p className="body-text">{item.condition}</p> 
+                            <p className="category-text">{'User:'}</p><p className="body-text"> {item.user}</p> */}
+                            <p className="category-text">{'Value:'}</p><p className="body-text">{`$ ${item.value}`}</p> 
+                             <p className="category-text">{'Zipcode:'}</p><p className="body-text">{item.zipcode}</p> 
                                 </div>
                             </div>
                         </Link>
