@@ -146,4 +146,9 @@ router.get('/authenticated', passport.authenticate('jwt',{session:false}), (req,
     res.json({isAuthenticated: true, user: {username}, id: {_id}, photo: {photo}});
 });
 
+// If no API routes are hit, send the React app
+router.use(function(req, res) {
+    res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
+
 module.exports = router;
