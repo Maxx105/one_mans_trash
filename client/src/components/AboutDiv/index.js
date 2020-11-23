@@ -16,8 +16,8 @@ function AboutDiv(props) {
             <div className="jumbotron jumbotron-fluid" id="header">
                 <div>
                     <h1 className="display-4">One Man's Trash [OMT]</h1>
-                    <h3>Destress, Declutter, & Develope</h3>
-                    <p className="lead">Here at  we aim to give you a
+                    <h3>Destress, Declutter, & Develop</h3>
+                    <p className="lead">Here at <strong>One Man's Trash</strong> we aim to give you a
                     platform FOR FREE. We believe in the saying, "One Man's Trash is another Man's Treasure." Now more than
                     ever is the perfect time to start relying on our neighbors rather than huge corporations and the
                     government to provide us with goods and services we are in search of. OMT is the perfect marketplace to
@@ -116,7 +116,7 @@ function AboutDiv(props) {
                                         <img src={github} className="icon"></img>
                                         </a>
                                         <br />
-                      Newport Beach CA
+                      Newport Beach, CA
                       <br />
                       Front-End Team
                   </address>
@@ -136,7 +136,7 @@ function AboutDiv(props) {
                                                 <img src={github} className="icon"></img>
                                             </a>
                                         <br />
-                      San Ramon CA
+                      San Ramon, CA
                       <br />
                       Back-End Team
                   </address>
