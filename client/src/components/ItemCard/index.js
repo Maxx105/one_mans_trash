@@ -28,7 +28,7 @@ function ItemCard(props) {
                                     <div className="card-body">
                                         <h5 className="title">{item.title}</h5>
                                         <p className="category-text"><span style ={{fontWeight: "bolder" }}> {'Details:'} </span> {item.details} </p>
-                                        <p className="category-text"><span style ={{fontWeight: "bolder" }}> {'Value:'}</span> {item.value}</p>
+                                        <p className="category-text"><span style ={{fontWeight: "bolder" }}> {'Value:'}</span> {`$${item.value}`}</p>
                                         <p className="category-text"><span style ={{fontWeight: "bolder" }}> {'Condition:'}</span>{item.condition}</p>
                                     </div>
                                 </div>
