@@ -7,10 +7,10 @@
     position: absolute;
     bottom: 0;
 } */
-#foot{
-    text-align: center;
-    padding: 100px;
-    background-color: rgb(75, 99, 128);
-    color: white;
-    margin-top: 100%;
-  }
+#foot {
+  text-align: center;
+  padding: 100px;
+  background-color: rgb(75, 99, 128);
+  color: white;
+  margin-top: 100%;
+}
