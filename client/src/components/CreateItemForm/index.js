@@ -14,10 +14,11 @@ function CreateItemForm(props) {
     return (
         <div>
            <div id="formCard">
+            <h1 className="signupTitle">CREATE AN ITEM</h1>
             <h3>Title:</h3>
-            <input className="form-control" type="text" placeholder="Default input" name="title" onChange={props.onChange}/>
+            <input className="form-control" type="text" placeholder="title" name="title" onChange={props.onChange}/>
             <h3>Details:</h3>
-            <input className="form-control" type="text" placeholder="Default input" name="details" onChange={props.onChange}/>
+            <input className="form-control" type="text" placeholder="tell us about your item!" name="details" onChange={props.onChange}/>
             {/* <h3>Photo:</h3>
             <input className="form-control" type="text" placeholder="Default input" name="photo" onChange={props.onChange}/> */}
             <div className="form-group">
@@ -25,17 +26,17 @@ function CreateItemForm(props) {
                 <input type="file" className="form-control-file" id="file" onChange={props.imageChange}/>
             </div>
             <h3>Value:</h3>
-            <input className="form-control" type="text" placeholder="Default input" name="value" onChange={props.onChange}/>
+            <input className="form-control" type="text" placeholder="how much is this worth to you?" name="value" onChange={props.onChange}/>
             <h3>Condition:</h3>
             <select className="form-control" name="condition" id="itemCondition" onChange={props.onChange}>
-                <option value="">Select your option</option>
-                <option value="For Parts">For Parts</option>
-                <option value="Slight Use">Slight Use</option>
-                <option value="Dead Stock">Dead Stock</option>
+                <option value="">Is it new?</option>
+                <option value="New">New</option>
+                <option value="Slight wear">Slight wear</option>
+                <option value="Used">Used</option>
             </select>
             <h3>Zipcode:</h3>
-            <input className="form-control" type="text" placeholder="Default input" name="zipcode" onChange={props.onChange}/>
-            <button id="createItemBtn" onClick = {props.onClick} className="btn btn-primary">Submit</button>
+            <input className="form-control" type="text" placeholder="where is this item?" name="zipcode" onChange={props.onChange}/>
+            <button id="createItemBtn" onClick = {props.onClick} className="btn btn-primary">Post it!</button>
             <br/>
             <br/>
             {props.message  ? 
