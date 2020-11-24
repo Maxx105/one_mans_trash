@@ -11,8 +11,9 @@ import NoMatch from './pages/NoMatch';
 import Navbar from "./components/Navbar";
 import PrivateRoute from './hocs/PrivateRoute';
 import UnPrivateRoute from './hocs/UnPrivateRoute';
-// import MessagingSystem from './pages/MessagingSystem';
+import Footer from "./components/Footer";
 
+// import MessagingSystem from './pages/MessagingSystem';
 function App() {
   return (
     <Router>
@@ -30,6 +31,7 @@ function App() {
         <Route path='*' component={NoMatch}></Route>
       </Switch>
     </div>
+   <Footer/>
     </Router>
   );
 }
