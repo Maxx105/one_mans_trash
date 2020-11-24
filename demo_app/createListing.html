@@ -6,101 +6,107 @@
     5. condition
     6. zipcode -->
 
-
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>create a listing</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      button {
+        margin-bottom: 10px;
+        margin-left: 50%;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>create a listing</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <style>
-    button {
-      margin-bottom: 10px;
-      margin-left: 50%;
-    }
+      h1 {
+        padding-top: 20px;
+        text-align: center;
+      }
 
-    h1 {
-      padding-top: 20px;
-      text-align: center;
-    }
+      body {
+        background-image: url("https://images.vexels.com/media/users/3/168638/preview2/779ce0383d1c49840083db43bb6b859f-gradient-geometric-shapes-background.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
 
-    body {
-      background-image: url('https://images.vexels.com/media/users/3/168638/preview2/779ce0383d1c49840083db43bb6b859f-gradient-geometric-shapes-background.jpg');
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
+      #itemCard {
+        border-radius: 25px;
+        margin-left: 20%;
+        margin-right: 30%;
+        margin-top: 30px;
+        background-color: beige;
+        border: solid 10px brown;
+      }
+    </style>
+  </head>
 
-    #itemCard {
-      border-radius: 25px;
-      margin-left: 20%;
-      margin-right: 30%;
-      margin-top: 30px;
-      background-color: beige;
-      border: solid 10px brown ;
-    }
-  </style>
+  <body>
+    <div id="itemCard" class="container">
+      <div class="row">
+        <div class="col">
+          <h1>Lets start Trading!</h1>
+          <ol>
+            <li>
+              <h3 class="h3">title</h3>
+              <input class="form-control" type="text" placeholder="tittle" />
+            </li>
 
-</head>
+            <li>
+              <h3 class="h3">item details</h3>
+              <textarea
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                rows="3"
+              ></textarea>
+            </li>
 
-<body>
-
-
-  <div id="itemCard" class="container">
-    <div class="row">
-      <div class="col">
-        <h1>Lets start Trading!</h1>
-        <ol>
-          <li>
-            <h3 class="h3">title</h3>
-            <input class="form-control" type="text" placeholder="tittle">
-          </li>
-
-          <li>
-            <h3 class="h3">item details</h3>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-          </li>
-
-          <li>
-            <h3 class="h3">item photos</h3>
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text">Upload</span>
+            <li>
+              <h3 class="h3">item photos</h3>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Upload</span>
+                </div>
+                <div class="custom-file">
+                  <input
+                    type="file"
+                    class="custom-file-input"
+                    id="inputGroupFile01"
+                  />
+                  <label class="custom-file-label" for="inputGroupFile01"
+                    >Choose file</label
+                  >
+                </div>
               </div>
-              <div class="custom-file">
-                <input type="file" class="custom-file-input" id="inputGroupFile01">
-                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-              </div>
-            </div>
-          </li>
+            </li>
 
-          <li>
-            <h3 class="h3">value</h3>
-            <input class="form-control" type="text" placeholder="value">
-          </li>
+            <li>
+              <h3 class="h3">value</h3>
+              <input class="form-control" type="text" placeholder="value" />
+            </li>
 
-          <li>
-            <h3 class="h3">condition</h3>
-            <select name="condition" id="itemCondition">
-              <option value="Brand New">Brand New</option>
-              <option value="Slight Use">Slight Use</option>
-              <option value="Used">Used</option>
-            </select>
-          </li>
+            <li>
+              <h3 class="h3">condition</h3>
+              <select name="condition" id="itemCondition">
+                <option value="Brand New">Brand New</option>
+                <option value="Slight Use">Slight Use</option>
+                <option value="Used">Used</option>
+              </select>
+            </li>
 
-          <li>
-            <h3 class="h3">zipcode</h3>
-            <input class="form-control" type="text" placeholder="zipcode">
-          </li>
-
-        </ol>
-        <button type="button" class="btn btn-success">Post it!</button>
+            <li>
+              <h3 class="h3">zipcode</h3>
+              <input class="form-control" type="text" placeholder="zipcode" />
+            </li>
+          </ol>
+          <button type="button" class="btn btn-success">Post it!</button>
+        </div>
       </div>
     </div>
-  </div>
-
-</body>
-
+  </body>
 </html>

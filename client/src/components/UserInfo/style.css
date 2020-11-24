@@ -1,17 +1,17 @@
 #username-id {
-    margin: 20px;
+  margin: 20px;
 }
 
 #profile-photo {
-    margin: auto;
-    width: 150px;
-    /* float: left; */
-} 
-#profileBanner{
-    text-align: center;
-    border: black 4px solid;
-    border-radius: 25px;
-    background-color: #f5f5f5;
-    margin: 15px;
-    padding: 10px;
+  margin: auto;
+  width: 150px;
+  /* float: left; */
+}
+#profileBanner {
+  text-align: center;
+  border: black 4px solid;
+  border-radius: 25px;
+  background-color: #f5f5f5;
+  margin: 15px;
+  padding: 10px;
 }

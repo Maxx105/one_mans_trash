@@ -20,7 +20,6 @@
 //         })
 //     }
 
-
 //     function addMessageToConversation({recipients, text, sender}) {
 //         setConversations(prevConversations => {
 //             let madeChange = false
@@ -30,18 +29,18 @@
 //                 {
 //                     madeChange = true
 //                     return {
-//                         ...conversation, 
+//                         ...conversation,
 //                         messages: [...conversation.messages, newMessage]
 //                     }
 //                 }
-                
+
 //                 return conversation
 //             })
-            
+
 //             if (madeChange) {
 //                 return newConversations
 //             } else {
-//                 return [...prevConversations, 
+//                 return [...prevConversations,
 //                     {recipients, message: [newMessage]}
 //                 ]
 //             }
@@ -56,7 +55,7 @@
 //     const formattedConversations = conversations.map((conversation, index) => {
 //         const recipients = conversation.recipients.map(recipient => {
 //             const contact = contacts.find(contact => {
-//                 return contact.id === recipient 
+//                 return contact.id === recipient
 //             })
 //             const name = (contact && contact.name) || recipient
 //             return { id: recipient, name}
@@ -70,7 +69,6 @@
 //             const fromMe = id === message.sender
 //             return { ...message, senderName: name, fromMe }
 //           })
-
 
 //         const selected = index === selectedConversationIndex
 //         return {...conversation, messages, recipients, selected}

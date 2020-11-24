@@ -1,39 +1,39 @@
 #home-item-card-link {
-    color: black; 
-    text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 
 .card-img-top {
-    padding: 10px;
+  padding: 10px;
 }
 
 .card:hover {
-    background-color: lightgrey;
+  background-color: lightgrey;
 }
 
 .card:active {
-    background-color: grey;
+  background-color: grey;
 }
 
-.title{
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    font-size: 36px;
-    line-height: 1;
-  }
+.title {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 36px;
+  line-height: 1;
+}
 
-  .body-text{
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    font-size: 24px;
-    line-height: 2;
-  }
+.body-text {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 24px;
+  line-height: 2;
+}
 
-  .category-text{
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    font-size: 30px;
-    line-height: 1;
-  }
+.category-text {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 30px;
+  line-height: 1;
+}
 
-  .photo{
-    padding: 25px;
-    margin: auto;
-  }
+.photo {
+  padding: 25px;
+  margin: auto;
+}
