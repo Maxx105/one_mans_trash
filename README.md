@@ -5,6 +5,8 @@ UCI Boot Camp Project 03 - One Man's Trash
 
 Click [here](https://one-mans-trash.herokuapp.com/) to open the deployed Github pages application.
 
+![deployed application](client/public/deployed_app.JPG)
+
 ## Description
 This was the final project for the full stack web development program at UC Irvine, in which the goal was to create an application that has real world value. The criteria for this project included the use of REACTJS, Node, MYSQL or MongoDB, and the use of two new technologies.
 
