@@ -6,6 +6,7 @@ function LoginForm(props) {
     return (
         <div className = "login">
             <form onSubmit={props.onSubmit}>
+                <h1 className= "signupTitle" >LOGIN</h1>
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Username</label>
                     <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="username" onChange={props.onChange}/>

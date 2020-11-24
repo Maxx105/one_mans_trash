@@ -18,7 +18,7 @@ function ItemCard(props) {
             {
                 props.items.map(item => (
                     <div className = "col-lg-3 col-md-6 col-sm-12" key={item._id}>
-                        <div className="card" style={{margin: "20px"}}>
+                        <div className="card" style={{margin: "10px"}}>
                             <Link to={"/item/" + item._id} id="item-card-link">
                                 <div className = "photo">
                                     {item.photo ?

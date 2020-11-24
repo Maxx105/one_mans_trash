@@ -15,8 +15,8 @@ function AboutDiv(props) {
         <div>
             <div className="jumbotron jumbotron-fluid" id="header">
                 <div>
-                    <h1 className="display-4">One Man's Trash [OMT]</h1>
-                    <h3>Destress, Declutter, & Develop</h3>
+                    <h1 className="display-4 signupTitle">One Man's Trash [OMT]</h1>
+                    <h3 className="signupTitle" >Destress, Declutter, & Develop</h3>
                     <p className="lead">Here at <strong>One Man's Trash</strong> we aim to give you a
                     platform FOR FREE. We believe in the saying, "One Man's Trash is another Man's Treasure." Now more than
                     ever is the perfect time to start relying on our neighbors rather than huge corporations and the
@@ -33,13 +33,13 @@ function AboutDiv(props) {
 
 
 
-                    <h2>how it works</h2>
+                    <h2 className="signupTitle">how it works</h2>
 
 
                     <div className="col">
-                        <iframe src="https://www.youtube.com/embed/Y8zh1fIaneY" frameborder="0"
+                        <iframe src="https://www.youtube.com/embed/Y8zh1fIaneY" frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
+                            allowFullScreen></iframe>
                     </div>
 
                 </div>
@@ -51,7 +51,7 @@ function AboutDiv(props) {
                 <div className="row">
                     <div id="descriptionLeft" className="col-md-3 col-sm-6">
 
-                        <h3>who we are</h3>
+                        <h3 className="signupTitle" >who we are</h3>
                         <p>OTM's Dev Team is comprised of 4 hard working and determined UCI Full Stack Bootcamp Graduates
                         looking to make a difference in the world. Each member is highly skilled in their specific role with
           a strong focus on consumer satisfaction. We're here for you!</p>
@@ -64,7 +64,7 @@ function AboutDiv(props) {
                                 <div className="col devCard">
                                     <img src={michael} className="devPics" alt="" srcSet="" />
                                     <address>
-                                        <a href="mailto:trujillom9@gmail.com">Michael Trujillo</a><br />
+                                        <a className="signupTitle" href="mailto:trujillom9@gmail.com">Michael Trujillo</a><br />
                                         <a href="https://www.linkedin.com/in/michael-trujillo-017696188/" target="_blank"
                                             rel="noopener noreferrer">
                                             <img src={link} className="icon" ></img>
@@ -84,7 +84,7 @@ function AboutDiv(props) {
 
                                     <img src={maxx} className="devPics" alt="" srcSet="" />
                                     <address>
-                                        <a href="mailto:maxxsanner105@gmail.com">Maxx Sanner</a><br />
+                                        <a className="signupTitle"href="mailto:maxxsanner105@gmail.com">Maxx Sanner</a><br />
                                         <a href="https://www.linkedin.com/in/maxx-sanner-49247b169" target="_blank"
                                             rel="noopener noreferrer">
                                                 <img src={link} className="icon" ></img>
@@ -106,7 +106,7 @@ function AboutDiv(props) {
 
                                     <img src={fernando} className="devPics" alt="" srcSet="" />
                                     <address>
-                                        <a href="mailto:fangulo82@gmail.com">Fernando Angulo Donoso</a><br />
+                                        <a className="signupTitle" href="mailto:fangulo82@gmail.com">Fernando Angulo Donoso</a><br />
                                         <a href="http://www.linkedin.com/in/fernando-angulo-donoso-b3749026" target="_blank"
                                             rel="noopener noreferrer">
                                                 <img src={link} className="icon" ></img>
@@ -125,7 +125,7 @@ function AboutDiv(props) {
 
                                     <img src={jonathan} className="devPics" alt="" srcSet="" />
                                     <address>
-                                        <a href="mailto:jonathanhui.hk@gmail.com">Jonathan Hui</a><br />
+                                        <a className="signupTitle" href="mailto:jonathanhui.hk@gmail.com">Jonathan Hui</a><br />
                                         <a href="https://www.linkedin.com/in/jonathan-hui-b492421a1/" target="_blank"
                                             rel="noopener noreferrer">
                                                 <img src={link} className="icon" ></img>

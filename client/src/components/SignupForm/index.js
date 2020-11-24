@@ -15,6 +15,7 @@ function SignupForm(props) {
     return (
         <div className = "signup" onChange = {props.onChange}>
             <form>
+                <h1 className= "signupTitle" >SIGN UP</h1>
                 <div className="form-group">
                     <label>First Name</label>
                     <input type="text" className="form-control" id="first-name" name="first_name" />
@@ -22,6 +23,10 @@ function SignupForm(props) {
                 <div className="form-group">
                     <label>Last Name</label>
                     <input type="text" className="form-control" id="last-name" name="last_name" />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="file">Profile Picture</label>
+                    <input type="file" className="form-control-file" id="photo" onChange = {props.imageChange}/>
                 </div>
                 <div className="form-group">
                     <label>Username</label>
@@ -35,11 +40,7 @@ function SignupForm(props) {
                     <label htmlFor="exampleInputPassword1">Password</label>
                     <input type="password" className="form-control" id="exampleInputPassword1" name="password" />
                 </div>
-                <div className="form-group">
-                    <label htmlFor="file">Profile Picture</label>
-                    <input type="file" className="form-control-file" id="photo" onChange = {props.imageChange}/>
-                </div>
-                <button className="btn btn-primary" onClick={props.onSubmit}>Submit</button>
+                <button className="btn btn-primary" onClick={props.onSubmit}>Create Account</button>
             </form>
             <br/>
             {props.message  ? 

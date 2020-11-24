@@ -1,6 +1,6 @@
-p{
+/* p{
     margin: 25px;
-}
+} */
 body {
     /* background-image: url('https://i.pinimg.com/736x/1a/bb/9a/1abb9a72e471d4ce46f1b5f06bc1f922.jpg'); */
     background-repeat: no-repeat;
@@ -13,7 +13,7 @@ body {
 } */
 
 body{
-    background-image: url('../../assets/3.jpg');
+    background-image: url('../../assets/allTime.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
