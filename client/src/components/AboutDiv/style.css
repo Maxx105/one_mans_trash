@@ -31,17 +31,19 @@ body{
 #howBanner {
     background-color:#f5f5f5;
     border-radius: 25px;
-    padding: 10px;
+    padding: 20px;
     width: fit-content;
     border: rgb(23, 25, 143) solid 6px;
+
 }
 
 #header {
     background-color: #f5f5f5;
     border: rgb(66, 60, 161) solid 6px;
     border-radius: 25px;
-    margin: 10px;
+    margin: 25px;
     text-align: center;
+    padding: 30px;
 }
 #descriptionLeft{
     margin-top: 10%;
@@ -71,4 +73,8 @@ body{
     text-align: center;
     border: black 3px solid;
     border-radius: 25px;
+}
+
+.itWorks{
+    text-decoration: underline;
 }
