@@ -4,11 +4,8 @@ function NoMatch() {
   const div404 = {
     margin: "auto",
     marginTop: "50px",
-    border: "solid 2px rgb(23, 25, 143)",
-    borderRadius: "10px",
     width: "75%",
     textAlign: "center",
-    fontFamily: "Comic Sans, cursive, sans-serif",
   };
   const textStyle = {
     margin: "20px",

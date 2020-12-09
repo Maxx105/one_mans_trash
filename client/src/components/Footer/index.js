@@ -5,7 +5,10 @@ function Footer(props) {
   return (
     <footer id="foot">
       <p>
-        Want to know what we're <Link to="/about">about</Link> ?
+         <Link to="/about">About</Link> | <Link to="/404">Support</Link> | <Link to="/404">Privacy Policy</Link> | <Link to="/404">Terms</Link> 
+      </p>
+      <p>
+      Copyright ©2020 One Man's Trash
       </p>
     </footer>
   );
