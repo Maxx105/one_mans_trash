@@ -41,7 +41,7 @@ function Navbar() {
   function preLoginNavbar() {
     return (
       <>
-        <div className="navbar-collapse" id="navbarText">
+        <div className="collapse navbar-collapse" id="navbarText">
           <ul className="navbar-nav mr-auto">
             <Link to="/">
               <li className="nav-item nav-link" id="link" >Home</li>
@@ -60,7 +60,7 @@ function Navbar() {
   function postLoginNavBar() {
     return (
       <>
-        <div className="navbar-collapse" id="navbarText">
+        <div className="collapse navbar-collapse" id="navbarText">
           <ul className="navbar-nav mr-auto">
             <Link to="/">
               <li className="nav-item nav-link" id="link">Home</li>
@@ -89,20 +89,18 @@ function Navbar() {
               {/* <img src={URL + photo} width="55" height="55" className="img-thumbnail rounded-circle" style={{marginLeft: '10px'}}/> */}
             </li>
           </ul>
-        </div>
-        <li className="nav-item nav-link disabled" id="username">
           <img
             src={photo}
             width="55"
             height="55"
             className="img-thumbnail rounded-circle"
-          />
-        </li>
+            />
+        </div>
       </>
     );
   }
   return (
-    <nav className="navbar navbar-expand-sm navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link to="/" className="navbar-brand" >
         <img
         id="logo"
@@ -110,6 +108,9 @@ function Navbar() {
         />
         
       </Link>
+      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
+      </button>
       {!isAuthenticated ? preLoginNavbar() : postLoginNavBar()}
     </nav>
   );

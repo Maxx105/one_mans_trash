@@ -34,17 +34,6 @@ function Item(props) {
 
   function messageSubmitHandler(e) {
     e.preventDefault()
-    // MessageAPI.postMessage({
-    //   fromUsername: authContext.user.username,
-    //   fromUserID: authContext.id._id,
-    //   toUsername: user.username,
-    //   toUserID: user._id,
-    //   message: message,
-    //   item: item.title,
-    //   itemID: item._id
-    // }).then(data => {
-    //   console.log(data)
-    // }).catch(err => console.log(err.response))
 
     MessageAPI.getUserConversations()
     .then(res => {
@@ -88,22 +77,6 @@ function Item(props) {
     })
     .catch((err) => console.log(err.response));
   }
-
-  // function updateConversation(id) {
-  //   MessageAPI.updateConversation(id, {
-  //     message: [{
-  //       fromUsername: authContext.user.username,
-  //       fromUserID: authContext.id._id,
-  //       toUsername: user.username,
-  //       toUserID: user._id,
-  //       message: message,
-  //       item: item.title,
-  //       itemID: item._id
-  //     }]
-  //   })
-  //   .then(data => console.log("updated"))
-  //   .catch((err) => console.log(err.response));
-  // }
 
   function messageChangeHandler(e) {
     setMessage(e.target.value)
