@@ -44,13 +44,13 @@ function Navbar() {
         <div className="navbar-collapse" id="navbarText">
           <ul className="navbar-nav mr-auto">
             <Link to="/">
-              <li className="nav-item nav-link">Home</li>
+              <li className="nav-item nav-link" id="link" >Home</li>
             </Link>
             <Link to="/about">
-              <li className="nav-item nav-link">About</li>
+              <li className="nav-item nav-link" id="link">About</li>
             </Link>
             <Link to="/login">
-              <li className="nav-item nav-link">Login/Register</li>
+              <li className="nav-item nav-link" id="link">Login/Register</li>
             </Link>
           </ul>
         </div>
@@ -63,13 +63,13 @@ function Navbar() {
         <div className="navbar-collapse" id="navbarText">
           <ul className="navbar-nav mr-auto">
             <Link to="/">
-              <li className="nav-item nav-link">Home</li>
+              <li className="nav-item nav-link" id="link">Home</li>
             </Link>
             <Link to="/createitem">
-              <li className="nav-item nav-link">Create Item</li>
+              <li className="nav-item nav-link" id="link">Create Item</li>
             </Link>
             <Link to="/about">
-              <li className="nav-item nav-link">About</li>
+              <li className="nav-item nav-link" id="link" >About</li>
             </Link>
             {/* <Link to="/messages">
                             <li className="nav-item nav-link">
@@ -77,12 +77,12 @@ function Navbar() {
                             </li>
                         </Link> */}
             <Link to={"/userprofile/" + id._id}>
-              <li className="nav-item nav-link">Profile</li>
+              <li className="nav-item nav-link" id="link" >Profile</li>
             </Link>
           </ul>
           <ul className="navbar-nav">
             <Link to="/">
-              <li className="nav-item nav-link" onClick={onClickLogoutHandler}>
+              <li className="nav-item nav-link" id="link" onClick={onClickLogoutHandler}>
                 Logout
               </li>
             </Link>
@@ -105,7 +105,7 @@ function Navbar() {
   }
   return (
     <nav className="navbar navbar-expand-sm navbar-light bg-light">
-      <Link to="/" className="navbar-brand">
+      <Link to="/" className="navbar-brand" id="logo">
         <img
           id="nav-icon"
           src={icon}

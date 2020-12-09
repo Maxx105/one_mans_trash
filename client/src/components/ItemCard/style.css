@@ -1,26 +1,27 @@
 #item-card-link {
-  color: black;
-  text-decoration: none;
+    color: black; 
+    text-decoration: none;
 }
 
-.ategory-text {
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: 24px;
-  line-height: 1;
-}
+.ategory-text{
+    
+    font-size: 24px;
+    line-height: 1;;
+  }
 
-title {
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: 36px;
-  line-height: 1;
-}
+  title{
+    
+    font-size: 36px;
+    line-height: 1;;
+  }
 
-.delete {
-  border-radius: 25;
-  margin: 15px;
-}
+  .delete {
+     border-radius: 25;
+     margin: 15px; 
+     
+  }
 
-#photo {
-  padding: 25px;
-  margin: auto;
-}
+  #photo{
+    padding: 25px;
+    margin: auto;
+  }
