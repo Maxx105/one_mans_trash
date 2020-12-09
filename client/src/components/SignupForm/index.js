@@ -39,7 +39,6 @@ function SignupForm(props) {
           <input
             type="file"
             className="form-control-file"
-            id="photo"
             onChange={props.imageChange}
           />
         </div>
