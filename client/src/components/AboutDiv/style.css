@@ -54,7 +54,7 @@ body {
 #devCards {
   margin: 10px;
   padding: 10px;
-  border: rgb(43, 109, 209) solid 5px;
+  /* border: rgb(43, 109, 209) solid 5px; */
   border-radius: 25px;
 }
 /* img{

@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import AuthAPI from "../../utils/AuthAPI";
 import UserAPI from "../../utils/UserAPI";
 import { AuthContext } from "../../Context/AuthContext";
-import icon from "../../assets/trashLogo.jpg";
+import icon from "../../assets/trashLogo.png";
 import "./style.css";
 function Navbar() {
   const {
@@ -105,17 +105,12 @@ function Navbar() {
   }
   return (
     <nav className="navbar navbar-expand-sm navbar-light bg-light">
-      <Link to="/" className="navbar-brand" id="logo">
+      <Link to="/" className="navbar-brand" >
         <img
-          id="nav-icon"
-          src={icon}
-          width="30"
-          height="30"
-          className="d-inline-block align-top"
-          alt=""
-          loading="lazy"
+        id="logo"
+        src={icon}
         />
-        ne Mans' Trash
+        
       </Link>
       {!isAuthenticated ? preLoginNavbar() : postLoginNavBar()}
     </nav>
