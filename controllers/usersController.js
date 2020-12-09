@@ -1,6 +1,5 @@
 const User = require("../models/User");
 
-// Defining methods for the booksController
 module.exports = {
   findAll: function (req, res) {
     User.find(req.query)
@@ -31,23 +30,22 @@ module.exports = {
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
-  //   create: function(req, res) {
-  //     User
-  //       .create(req.body)
-  //       .then(dbModel => res.json(dbModel))
-  //       .catch(err => res.status(422).json(err));
-  //   },
-  //   update: function(req, res) {
-  //     User
-  //       .findOneAndUpdate({ _id: req.params.id }, req.body)
-  //       .then(dbModel => res.json(dbModel))
-  //       .catch(err => res.status(422).json(err));
-  //   },
-  //   remove: function(req, res) {
-  //     User
-  //       .findById({ _id: req.params.id })
-  //       .then(dbModel => dbModel.remove())
-  //       .then(dbModel => res.json(dbModel))
-  //       .catch(err => res.status(422).json(err));
-  //   }
+  create: function(req, res) {
+    User
+      .create(req.body)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  update: function(req, res) {
+    const conversation = new Conversation(req.body);
+    User
+      .findByIdAndUpdate(req.body._id,
+        { "$push": { "conversation": conversation._id } },
+        { "new": true, "upsert": true },
+        function (err, res) {
+            if (err) throw err;
+            // console.log(res);
+        }
+    );
+  }
 };

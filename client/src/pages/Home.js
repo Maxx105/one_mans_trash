@@ -152,12 +152,17 @@ function Home() {
     }
   }
   function handleUseMyLocationSubmit(e) {
-    ZipAPI.getZipbyLocation().then((data) => {
-      const { city, region_code, country_code, zip_code } = data.data;
-      const location = `${city}, ${region_code}, ${country_code} ${zip_code}`;
-      document.getElementById("distance-filter").value = location;
-      setLocation(zip_code);
-    });
+    ZipAPI.getMyIP()
+    .then(data => {
+      const { ip } = data.data;
+      ZipAPI.getZipbyLocation(ip).then((data) => {
+        const { city, region_code, country_code, zip_code } = data.data;
+        const location = `${city}, ${region_code}, ${country_code} ${zip_code}`;
+        document.getElementById("distance-filter").value = location;
+        setLocation(zip_code);
+      });
+    })
+    
   }
   return (
     <div>

@@ -17,21 +17,20 @@ const ItemSchema = new mongoose.Schema({
   },
   condition: {
     type: String,
-    default: "For Parts",
+    default: "New",
     required: true,
   },
   zipcode: {
     type: Number,
     required: true,
   },
-  // user: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
   user: {
     type: String,
     required: true,
   },
   userID: {
     type: String,
-  },
+  }
 });
 
 module.exports = mongoose.model("Item", ItemSchema);

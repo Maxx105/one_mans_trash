@@ -71,11 +71,9 @@ function Navbar() {
             <Link to="/about">
               <li className="nav-item nav-link" id="link" >About</li>
             </Link>
-            {/* <Link to="/messages">
-                            <li className="nav-item nav-link">
-                                Messages
-                            </li>
-                        </Link> */}
+            <Link to="/messages">
+                <li className="nav-item nav-link" id="link">Messages</li>
+            </Link>
             <Link to={"/userprofile/" + id._id}>
               <li className="nav-item nav-link" id="link" >Profile</li>
             </Link>
