@@ -25,7 +25,9 @@ const UserSchema = new mongoose.Schema({
   photo: {
     type: String,
   },
-  items: [{ type: mongoose.Schema.Types.ObjectId, ref: "Item" }], //so user has own todos
+  items: [{ type: mongoose.Schema.Types.ObjectId, ref: "Item" }],
+  sentMessages: [{ type: mongoose.Schema.Types.ObjectId, ref: "Message" }],
+  conversation: [{ type: mongoose.Schema.Types.ObjectId, ref: "Conversation" }]
 });
 
 UserSchema.pre("save", function (next) {

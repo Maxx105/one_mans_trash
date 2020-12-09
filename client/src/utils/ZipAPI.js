@@ -16,8 +16,11 @@ const ZipAPI = {
       },
     });
   },
-  getZipbyLocation: function () {
-    return axios.get("https://freegeoip.app/json/");
+  getZipbyLocation: function (ip) {
+    return axios.get("https://freegeoip.app/json/" + ip);
   },
+  getMyIP: function () {
+    return axios.get("https://api.ipify.org/?format=json");
+  }
 };
 export default ZipAPI;

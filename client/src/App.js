@@ -6,6 +6,7 @@ import Signup from "./pages/Signup";
 import UserProfile from "./pages/UserProfile";
 import About from "./pages/About";
 import CreateItem from "./pages/CreateItem";
+import Conversation from "./pages/Conversation";
 import NoMatch from "./pages/NoMatch";
 import Navbar from "./components/Navbar";
 import PrivateRoute from "./hocs/PrivateRoute";
@@ -28,7 +29,8 @@ function App() {
           ></PrivateRoute>
           <UnPrivateRoute path="/signup" component={Signup}></UnPrivateRoute>
           <Route exact path="/about" component={About}></Route>
-          {/* <PrivateRoute exact path='/messages' component={MessagingSystem}></PrivateRoute> */}
+          <PrivateRoute exact path='/messages' component={Conversation}></PrivateRoute>
+          <PrivateRoute path='/messages/:id' component={Conversation}></PrivateRoute>
           <PrivateRoute
             path="/userprofile/:id"
             component={UserProfile}

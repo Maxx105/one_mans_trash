@@ -1,0 +1,7 @@
+#messageUserlist:hover {
+    background-color: lightgrey;
+}
+
+#messageUserlist:active {
+    background-color: grey;
+}

@@ -5,6 +5,8 @@ const passportConfig = require("../../passport");
 const JWT = require("jsonwebtoken");
 const usersController = require("../../controllers/usersController");
 const itemsController = require("../../controllers/itemsController");
+const messagesController = require("../../controllers/messagesController");
+const conversationController = require("../../controllers/conversationController");
 const path = require("path");
 const aws = require("aws-sdk");
 const multer = require("multer");
@@ -12,6 +14,8 @@ const multerS3 = require("multer-s3");
 require("dotenv").config();
 const User = require("../../models/User");
 const Item = require("../../models/Item");
+const Message = require("../../models/Message");
+const Conversation = require("../../models/Conversation");
 
 const s3 = new aws.S3({
   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
@@ -88,12 +92,81 @@ router
   .get(usersController.findAll)
   .post(usersController.findOneThenSave);
 
-router.route("/user/:id").get(usersController.findById);
+router.route("/user/:id")
+  .get(usersController.findById)
+  // .put(usersController.update)
+  .post(usersController.create);
+
+router.put(
+  "/user/:id",
+  passport.authenticate("jwt", { session: false }),
+  function (req, res) {
+    const conversation = new Conversation(req.body);
+    User
+    .findByIdAndUpdate(req.params.id,
+      { "$push": { "conversation": req.body.id } },
+      function (err, res) {
+          if (err) throw err;
+          // console.log(res);
+      })
+  }
+);
+
+// router.put(
+//   "/conversation/:id",
+//   passport.authenticate("jwt", { session: false }),
+//   function (req, res) {
+//     const conversation = new Conversation(req.body);
+//     Conversation
+//     .findByIdAndUpdate(req.params.id,
+//       { "$push": { "conversation": req.body.id } },
+//       function (err, res) {
+//           if (err) throw err;
+//           // console.log(res);
+//       })
+//   }
+// );
+
+  
 
 router
   .route("/allItems/:id")
   .get(itemsController.findById)
   .delete(itemsController.remove);
+
+router
+  .route("/conversation/:id")
+  .get(conversationController.findById)
+  // .post(conversationController.create)
+  .put(conversationController.update);
+
+router
+  .route("/conversation")
+  .get(conversationController.findAll)
+  .put(conversationController.update);
+
+router.post(
+  "/conversation",
+  passport.authenticate("jwt", { session: false }),
+  function (req, res) {
+    const conversation = new Conversation(req.body);
+    conversation.save((err) => {
+      if (err) {
+        res.json({ message: "Error has occurred", error: true });
+      } else {
+        req.user.conversation.push(conversation);
+        req.user.save((err) => {
+          if (err) {
+            res.json({ message: "Error has occurred", error: true });
+          } else {
+            res.json({ message: "Successfully created conversation", error: false, id: conversation._id });
+          }
+        });
+      }
+    });
+  }
+);
+
 
 router.post(
   "/login",
@@ -140,12 +213,39 @@ router.post(
   }
 );
 
+router.post(
+  "/messages",
+  passport.authenticate("jwt", { session: false }),
+  messagesController.create
+);
+
+router
+  .route("/messages")
+  .get(messagesController.findAll)
+
+
 // for testing and seeing all items in database
 router.get("/allItems", function (req, res) {
   Item.find(req.query)
     .then((dbModel) => res.json(dbModel))
     .catch((err) => res.status(422).json(err));
 });
+
+router.get(
+  "/userConversation",
+  passport.authenticate("jwt", { session: false }),
+  function (req, res) {
+    User.findById({ _id: req.user._id })
+      .populate("conversation")
+      .exec((err, document) => {
+        if (err) {
+          res.json({ message: "Error has occurred", error: true });
+        } else {
+          res.json({ conversation: document.conversation, authenticated: true });
+        }
+      });
+  }
+)
 
 router.get(
   "/userItems",
@@ -164,6 +264,22 @@ router.get(
 );
 
 router.get(
+  "/userMessages",
+  passport.authenticate("jwt", { session: false }),
+  function (req, res) {
+    User.findById({ _id: req.user._id })
+      .populate("sentMessages")
+      .exec((err, document) => {
+        if (err) {
+          res.json({ message: "Error has occurred", error: true });
+        } else {
+          res.json({ sentMessages: document.sentMessages, authenticated: true });
+        }
+      });
+  }
+)
+
+router.get(
   "/authenticated",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
@@ -175,6 +291,7 @@ router.get(
       user: { username },
       id: { _id },
       photo: { photo },
+      conversationID: 0
     });
   }
 );
