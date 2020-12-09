@@ -16,7 +16,7 @@ function AboutDiv(props) {
             <div className="jumbotron jumbotron-fluid" id="header">
                 <div>
                     <br></br>
-                    <h1 className="display-4 signupTitle">One Man's Trash </h1>
+                    <h1 className="display-4 signupTitle itWorks">One Man's Trash </h1>
                     <br></br>
                     <h4>(OMT)</h4>
                     <br></br>

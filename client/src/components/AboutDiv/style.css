@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+
 /* p{
     margin: 25px;
 } */
@@ -76,4 +79,11 @@ body {
 
 .itWorks {
   text-decoration: underline;
+  font-family: "Montserrat", sans-serif;
 }
+
+*{
+    font-family: "Montserrat", sans-serif;
+
+}
+

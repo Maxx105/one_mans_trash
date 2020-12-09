@@ -14,12 +14,12 @@ function CreateItemForm(props) {
   return (
     <div>
       <div id="formCard">
-        <h1 className="signupTitle">CREATE AN ITEM</h1>
+        <h1 className="signupTitle" id="title">CREATE AN ITEM</h1>
         <h3>Title:</h3>
         <input
           className="form-control"
           type="text"
-          placeholder="title"
+          placeholder="Title"
           name="title"
           onChange={props.onChange}
         />
@@ -27,7 +27,7 @@ function CreateItemForm(props) {
         <input
           className="form-control"
           type="text"
-          placeholder="tell us about your item!"
+          placeholder="Details"
           name="details"
           onChange={props.onChange}
         />
@@ -48,7 +48,7 @@ function CreateItemForm(props) {
         <input
           className="form-control"
           type="text"
-          placeholder="how much is this worth to you?"
+          placeholder="Price"
           name="value"
           onChange={props.onChange}
         />
@@ -59,7 +59,7 @@ function CreateItemForm(props) {
           id="itemCondition"
           onChange={props.onChange}
         >
-          <option value="">Is it new?</option>
+          <option value="">Select Condition</option>
           <option value="New">New</option>
           <option value="Slight wear">Slight wear</option>
           <option value="Used">Used</option>
@@ -68,7 +68,7 @@ function CreateItemForm(props) {
         <input
           className="form-control"
           type="text"
-          placeholder="where is this item?"
+          placeholder="Item Location"
           name="zipcode"
           onChange={props.onChange}
         />
