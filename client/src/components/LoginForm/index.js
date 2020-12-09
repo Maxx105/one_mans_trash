@@ -6,7 +6,7 @@ function LoginForm(props) {
   return (
     <div className="login">
       <form onSubmit={props.onSubmit}>
-        <h1 className="signupTitle">LOGIN</h1>
+        <h1 className="signupTitle" >LOGIN</h1>
         <div className="form-group">
           <label htmlFor="exampleInputEmail1">Username</label>
           <input

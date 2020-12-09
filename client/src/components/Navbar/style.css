@@ -13,11 +13,6 @@
     color:black;
 }
 
-
-
-
-
-
 .navbar {
     
         background: radial-gradient(
@@ -25,7 +20,7 @@
           rgb(27, 50, 167) 0%,
           rgb(72, 112, 192) 100%
         );
-        border-bottom: solid 2px black;
+        border-bottom: solid 1px rgb(66, 60, 161);
       
     
 }
@@ -34,4 +29,11 @@
   border: #edf0f1 3px solid;
   border-radius: 25px;
   margin: 1px;
+}
+
+#logo{
+    height: auto; 
+    width: auto; 
+    max-width: 200px; 
+    max-height: 200px;
 }
