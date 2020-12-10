@@ -14,7 +14,8 @@ function Conversation() {
     const [conversationID, setConversationID] = useState('');
     const [messages, setMessages] = useState([]);
     const [response, setResponse] = useState("");
-    const [messageHeader, setMessageHeader] = useState({})
+    const [messageHeader, setMessageHeader] = useState({});
+    const [userPhoto, setUserPhoto] = useState("");
 
     const { id } = useParams();
 
@@ -92,6 +93,10 @@ function Conversation() {
 
     function handleResponseInputChange(e) {
         setResponse(e.target.value)
+    }
+
+    function getUserPhoto(id) {
+        
     }
 
     return (
