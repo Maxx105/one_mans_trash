@@ -5,3 +5,11 @@
 #messageUserlist:active {
     background-color: grey;
 }
+
+#messageUserlist:visited {
+    background-color: grey;
+}
+
+#message-user {
+    color: black;
+}
